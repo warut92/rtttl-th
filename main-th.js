@@ -22,13 +22,16 @@ function convert() {
 
 	note = note.replace(/\//g,'');
 
-	note = note.replace(/ดํ/g,'8c6,');
 	note = note.replace(/ล/g,'8a5,');
+
+  note = note.replace(/ซ-/g,'4g5,');
 	note = note.replace(/ซ/g,'8g5,');
-	note = note.replace(/ซ-/g,'4g5,');
+
   note = note.replace(/มํ/g,'8e6,');
-	note = note.replace(/ม--/g,'4e5,8e5,');
-	note = note.replace(/ม-----/g,'2e5,4e5,');
+  note = note.replace(/ม-----/g,'2e5,4e5,');
+  note = note.replace(/ม---/g,'2e5,');
+  note = note.replace(/ม--/g,'4e5,8e5,');
+	note = note.replace(/ม-/g,'4e5,');
   note = note.replace(/ม/g,'8e5,');
 
 	note = note.replace(/รํ/g,'8d6,');
@@ -36,8 +39,10 @@ function convert() {
 	note = note.replace(/ร-/g,'4d5,');
   note = note.replace(/ร/g,'8d5,');
 
+  note = note.replace(/ดํ/g,'8c6,');
 	note = note.replace(/ด-/g,'4c5,');
 	note = note.replace(/ด/g,'8c5,');
+
 	note = note.replace(/-/g,'8p5,');
 
   note = note.replace(/\n/g,'');
