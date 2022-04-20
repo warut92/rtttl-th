@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+  <title>แปลงโน้ตไทยเป็น RTTTL</title>
+  <meta name="description" content="Convert thai notation to RTTL" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="icon.png">
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <link href="https://bootswatch.com/4/litera/bootstrap.min.css" rel="stylesheet" />
+
+  <link href="https://cdn.jsdelivr.net/gh/lazywasabi/thai-web-fonts@6/fonts/Garuda/Garuda.css" rel="stylesheet" />
+  <style>
+    body,
+    h1,
+    h4,
+    p,
+    textarea {
+      font-family: 'Garuda', sans-serif;
+      padding-top: 10px;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="page-header">
+      <h1>อธิบาย - แปลงโน้ตไทยเป็น RTTTL</h1>
+    </div>
+    <h4>RTTTL</h4>
+    <p>RTTL คือ Ring Tone Text Transfer Language ภาษาที่บริษัท Nokia พัฒนาขึ้นมาเพื่อการสร้างเสียงเรียกเข้าสำหรับโทรศัพท์มือถือของ Nokia</p>
+    <h4>โครงสร้าง</h4>
+    <p>โครงสร้างของ RTTTL จะมีอยู่ด้วยกัน 3 ส่วนคือ 1. ชื่อ 2.ค่าปริยาย 3.ข้อมูล <a href="https://en.wikipedia.org/wiki/Ring_Tone_Text_Transfer_Language">ซึ่งคุณสามารถศึกษาเพื่อเติมได้ที่นี่</a></p>
+    <h4>การแปลงจากโน้ตไทย</h4>
+    <p>ระบบโน้ตไทยนั้นไม่นิยมเขียนสัญลักษณ์ตัวหยุดเอาไว้ แต่เมื่อมาสร้างเป็นโปรแกรมนั้น ถ้าหากไม่มีการหยุดเสียงเลยก็จะทำให้เสียงนั้นยาวติดต่อกันไป ดังนั้นเราจึงได้กำหนดให้ <code>x</code> เป็นสัญลักษณ์ตัวหยุด</p>
+    <p>ท่านสามารถเปลี่ยนความช้าเร็วของจังหวะได้ที่ <code>b=100</code> ใน RTTTL</p>
+    <hr>
+    <a href="index.html">กลับหน้าหลัก</a>
+    </div>
+
+</body>
+
+</html>

@@ -1,19 +1,11 @@
-# RTTTL to thai music note
+# GitHub Pages convert Thai music notation to RTTTL
 
-It's still just an idea.
+## What is RTTTL
 
-Ref:
+read this! [Ring Tone Text Transfer Language](https://en.wikipedia.org/wiki/Ring_Tone_Text_Transfer_Language)
 
-What is RTTTL (Ring_Tone_Text_Transfer_Language)
+## My resources
 
-https://en.wikipedia.org/wiki/Ring_Tone_Text_Transfer_Language
+- [Play RTTTL Online](https://adamonsoon.github.io/rtttl-play/)
 
-Play RTTTL Online
-
-https://adamonsoon.github.io/rtttl-play/
-
-RepRapRingtone rtttl to gcode
-
-Convert to another text area
-
-http://ddrboxman.github.io/RepRapRingtone/
+- [RepRapRingtone rtttl to gcode](http://ddrboxman.github.io/RepRapRingtone/) Convert to another text area

@@ -19,6 +19,11 @@ function song3() {
   document.getElementById('thm').innerHTML = s;
 }
 
+function song4() {
+  var s = "ลูกอม:"+"\n"+"/---ซ/ลดํดํ-/---มํ/รํดํรํ-/---ซ/ลดํลดํ/---มํ/รํดํรํ-/--มํ-/ซํมํรํดํ/---ล/ล-ซ-/ดํ-ดํ-/--ซฟ/-มฟ-/ล-มํ-/รํ---/"
+  document.getElementById('thm').innerHTML = s;
+}
+
 //convert
 function convert() {
 	thmtextarea = document.getElementById('thm');
