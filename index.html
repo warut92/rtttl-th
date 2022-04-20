@@ -2,7 +2,7 @@
 <html lang="th">
 
 <head>
-  <title>แปลงโน้ตไทยเป็น RTTL</title>
+  <title>แปลงโน้ตไทยเป็น RTTTL</title>
   <meta name="description" content="Convert thai notation to RTTL" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -35,6 +35,10 @@
     <div class="page-header">
       <h1>แปลงโน้ตไทยเป็น RTTTL</h1>
     </div>
+    <button type="button" class="btn btn-secondary" aria-label="Play" onclick="newSong();">
+      <span>เขียนเอง</span>
+    </button>
+
     <button type="button" class="btn btn-primary" aria-label="Play" onclick="song1();">
       <span>ลาวครวญ</span>
     </button>
@@ -52,9 +56,8 @@
       <div class="">
 
         <h4>โน้ตไทย</h4>
-        <p><textarea id="thm" value="" class="" rows="3" cols="100" onkeyup="addSlash(this.value);">
-        </textarea></p>
-        <script type="text/javascript">
+        <p><textarea id="thm" value="" class="" rows="3" cols="100"></textarea></p>
+        <!-- <script type="text/javascript">
           function addSlash(nStr) {
             nStr += '';
             x = nStr.split('.');
@@ -68,7 +71,21 @@
             console.log(result);
             document.getElementById('thm').innerHTML = result;
           }
-        </script>
+        </script> -->
+        <button type="button" class="btn btn-secondary" onclick="getHi();"><ํ></button>
+        <button type="button" class="btn btn-secondary" onclick="getDash();">-</button>
+        <button type="button" class="btn btn-secondary" onclick="getSlash();">/</button>
+        <button type="button" class="btn btn-secondary" onclick="getSemi();">:</button>
+        <br>
+        <button type="button" class="btn btn-secondary" onclick="getDo();">ด</button>
+        <button type="button" class="btn btn-secondary" onclick="getRe();">ร</button>
+        <button type="button" class="btn btn-secondary" onclick="getMe();">ม</button>
+        <button type="button" class="btn btn-secondary" onclick="getFa();">ฟ</button>
+        <button type="button" class="btn btn-secondary" onclick="getSol();">ซ</button>
+        <button type="button" class="btn btn-secondary" onclick="getLa();">ล</button>
+        <button type="button" class="btn btn-secondary" onclick="getTi();">ท</button>
+        <br>
+        <br>
         <p>
           <button class="btn btn-success" onmousedown="convert();">แปลง</button>
         </p>
