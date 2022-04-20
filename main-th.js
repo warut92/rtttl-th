@@ -24,6 +24,11 @@ function song4() {
   document.getElementById('thm').innerHTML = s;
 }
 
+function song5() {
+  var s = "สาวสวนแตง:"+"\n"+"/----/---ดํ/--ลซ/ฟซลดํ/--ซล/ดํลซฟ/-ฟรฟ/ซลฟซ/"+"\n"+"/----/ดํลซฟ/--ซล/ดํลซฟ/---ร/ฟซฟด/-รฟซ/ดํลซฟ/"
+  document.getElementById('thm').innerHTML = s;
+}
+
 //convert
 function convert() {
 	thmtextarea = document.getElementById('thm');
