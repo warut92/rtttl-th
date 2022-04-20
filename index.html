@@ -43,6 +43,7 @@
     <div class="page-header">
       <h1>แปลงโน้ตไทยเป็น RTTTL</h1>
     </div>
+    <h4>โน้ตไทย</h4>
     <button type="button" class="btn btn-secondary" aria-label="Play" onclick="newSong();">
       <span>เขียนเอง</span>
     </button>
@@ -58,22 +59,23 @@
     <button type="button" class="btn btn-primary" aria-label="Play" onclick="song3();">
       <span>ลาวจ้อย</span>
     </button>
-
-    <input class="form-control" type="file" onchange="readFile(this)">
-      <span>อัปโหลด</span>
+    <br>
+    <br>
+<details>
+  <summary>ตัวเลือกอื่น ๆ</summary>
+  อัปโหลด .txt :<input type="file" onchange="readFile(this)"></input>
+  <button class="btn btn-danger" type="button" value="save" onclick="saveTextAsFile()">
+  <span>save</span>
+  </button>
+</details>
     <br>
     <div class="rows">
 
       <div class="">
-
-        <h4>โน้ตไทย</h4>
         <p><textarea id="thm" value="" class="" rows="3" cols="32" onclick="backSpace()"></textarea></p>
 
         <p>
           <button class="btn btn-success" onmousedown="convert();">แปลง</button>
-          <button class="btn btn-danger" type="button" value="save" onclick="saveTextAsFile()">
-          <span>save</span>
-          </button>
         </p>
         ความยาว: <p id="length">0</p>
       </div>
