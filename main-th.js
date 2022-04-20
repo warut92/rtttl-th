@@ -1,77 +1,22 @@
 //sample notes
 function newSong() {
-  var s = "ชื่อเพลง:"+"\n"+"/"
-  document.getElementById('thm').innerHTML = s;
+  var ns = "ชื่อเพลง:"+"\n"+"/"
+  document.getElementById('thm').innerHTML = ns;
 }
 
 function song1() {
-  var s = "ลาวครวญ:"+"\n"+"/----/----/-ซ-ม/รดรม/----/-ด-ร/-ด-ม/-รรร/---ซ/-ซซซ/ลซมซ/-ล-ดํ/---ดํ/-ดํดํดํ/-ซ-ม/รด-ร/"
+  var s = "ลาวครวญ:"+"\n"+"/----/----/-ซ-ม/รดรม/----/-ด-ร/-ด-ม/-รรร/"+"\n"+"/---ซ/-ซซซ/ลซมซ/-ล-ดํ/---ดํ/-ดํดํดํ/-ซ-ม/รด-ร/"
   document.getElementById('thm').innerHTML = s;
 }
 
 function song2() {
-  var s = "ลาวต่อนก:"+"\n"+"/----/----/รมซล/ซม-ซ/----/-ดํ-ล/-ซ-ม/รด-ร/---ม/---ร/---ดํ/มํรํดํล/-ซ-ด/-ร-ม/ซลซม/-ร-ด/"
+  var s = "ลาวต่อนก:"+"\n"+"/----/----/รมซล/ซม-ซ/----/-ดํ-ล/-ซ-ม/รด-ร/"+"\n"+"/---ม/---ร/---ดํ/มํรํดํล/-ซ-ด/-ร-ม/ซลซม/-ร-ด/"
   document.getElementById('thm').innerHTML = s;
 }
 
 function song3() {
-    var s = "ลาวจ้อย:"+"\n"+"/-ดรม/ซด-ร/-ดรม/ซล-ซ/-มซม/รดรม/รมซม/ซล-ซ/----/รมซล/--ดํล/ซม-ซ/-มรด/-ร-ม/รด-ร/-มรด/"
-    document.getElementById('thm').innerHTML = s;
-}
-//keyboard
-function getDo() {
-  var c = "ด";
-  document.getElementById('thm').innerHTML += c;
-}
-
-function getRe() {
-  var c = "ร";
-  document.getElementById('thm').innerHTML += c;
-}
-
-function getMe() {
-  var c = "ม";
-  document.getElementById('thm').innerHTML += c;
-}
-
-function getFa() {
-  var c = "ฟ";
-  document.getElementById('thm').innerHTML += c;
-}
-
-function getSol() {
-  var c = "ซ";
-  document.getElementById('thm').innerHTML += c;
-}
-
-function getLa() {
-  var c = "ล";
-  document.getElementById('thm').innerHTML += c;
-}
-
-function getTi() {
-  var c = "ท";
-  document.getElementById('thm').innerHTML += c;
-}
-//symbols
-function getHi() {
-  var c = "ํ";
-  document.getElementById('thm').innerHTML += c;
-}
-
-function getDash() {
-  var c = "-";
-  document.getElementById('thm').innerHTML += c;
-}
-
-function getSlash() {
-  var c = "/";
-  document.getElementById('thm').innerHTML += c;
-}
-
-function getSemi() {
-  var c = ":";
-  document.getElementById('thm').innerHTML += c;
+  var s = "ลาวต่อนก:"+"\n"+"/-ดรม/ซด-ร/-ดรม/ซล-ซ/-มซม/รดรม/รมซม/ซล-ซ/"+"\n"+"/----/รมซล/--ดํล/ซม-ซ/-มรด/-ร-ม/รด-ร/-มรด/"
+  document.getElementById('thm').innerHTML = s;
 }
 
 //convert
@@ -81,6 +26,8 @@ function convert() {
 	i = data.split(":");
 	name = i[0];
   note = i[1];
+
+  note = note.replace(/\n/g,'');
 
 	note = note.replace(/\//g,'');
 
@@ -140,12 +87,12 @@ function convert() {
   note = note.replace(/ฟ-/g,'4f5,');
   note = note.replace(/ฟ/g,'8f5,');
 
-  note = note.replace(/มํ-------/g,'1c6,');
-  note = note.replace(/มํ-----/g,'2c.6,');
-  note = note.replace(/มํ---/g,'2c6,');
-  note = note.replace(/มํ--/g,'4c.6,');
-  note = note.replace(/มํ-/g,'4c6,');
-  note = note.replace(/มํ/g,'8c6,');
+  note = note.replace(/มํ-------/g,'1e6,');
+  note = note.replace(/มํ-----/g,'2e.6,');
+  note = note.replace(/มํ---/g,'2e6,');
+  note = note.replace(/มํ--/g,'4e.6,');
+  note = note.replace(/มํ-/g,'4e6,');
+  note = note.replace(/มํ/g,'8e6,');
 
   note = note.replace(/ม-------/g,'1e5,'); //8
   note = note.replace(/ม-----/g,'2e.5,'); //6
@@ -195,8 +142,6 @@ function convert() {
   note = note.replace(/xxx/g,'4p.5,');
   note = note.replace(/xx/g,'4p5,');
   note = note.replace(/x/g,'8p5,');
-
-  note = note.replace(/\n/g,'');
 
 	// console.log(note.length);
   document.getElementById('length').innerHTML = note.length;
