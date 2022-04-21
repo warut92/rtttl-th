@@ -260,7 +260,7 @@ function _calculateFrequency(note, octave) {
     return 0;
   }
 
-  var C4 = 261.63;
+  var C4 = 233.082; //261.63
   var TWELFTH_ROOT = Math.pow(2, 1 / 12);
   var N = _calculateSemitonesFromC4(note, octave);
   var FREQUENCY = C4 * Math.pow(TWELFTH_ROOT, N);
