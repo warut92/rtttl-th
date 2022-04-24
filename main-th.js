@@ -179,7 +179,7 @@ function convert() {
 
  document.getElementById('length').innerHTML = note.length;
  console.log(note.length);
- 
+
  // ลบ str สุดท้าย
 	var n = note.slice(0,-1);
 
@@ -188,6 +188,23 @@ function convert() {
 		rtttltextarea = document.getElementById('rtttl');
 		rtttltextarea.value = output;
     console.log(output);
+}
 
+function alphabet(thm) {
+	var note = document.getElementById('thm').value;
+	note = note.replace(/1/g,'ด');
+	note = note.replace(/2/g,'ร');
+	note = note.replace(/3/g,'ม');
+	note = note.replace(/4/g,'ฟ');
+	note = note.replace(/5/g,'ซ');
+	note = note.replace(/6/g,'ล');
+	note = note.replace(/7/g,'ท');
+	note = note.replace(/\*/g,'ํ');
+	note = note.replace(/\./g,'ฺ');
 
+	document.getElementById('thm').value = note;
+	// var output = note;
+	// result = document.getElementById('thm').innerHTML;
+	// result.value = output;
+	// console.log(result);
 }
