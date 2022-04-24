@@ -1,3 +1,34 @@
+//sample notes
+function newSong() {
+  var ns = "ชื่อเพลง:"+"\n"+"/"
+  document.getElementById('thm').innerHTML = ns;
+}
+
+function song1() {
+  var s = "ลาวครวญ:"+"\n"+"/----/----/-ซ-ม/รดรม/----/-ด-ร/-ด-ม/-รรร/"+"\n"+"/---ซ/-ซซซ/ลซมซ/-ล-ดํ/---ดํ/-ดํดํดํ/-ซ-ม/รด-ร/"
+  document.getElementById('thm').innerHTML = s;
+}
+
+function song2() {
+  var s = "ลาวต่อนก:"+"\n"+"/----/----/รมซล/ซม-ซ/----/-ดํ-ล/-ซ-ม/รด-ร/"+"\n"+"/---ม/---ร/---ดํ/มํรํดํล/-ซ-ด/-ร-ม/ซลซม/-ร-ด/"
+  document.getElementById('thm').innerHTML = s;
+}
+
+function song3() {
+  var s = "ลาวจ้อย:"+"\n"+"/-ดรม/ซด-ร/-ดรม/ซล-ซ/-มซม/รดรม/รมซม/ซล-ซ/"+"\n"+"/----/รมซล/--ดํล/ซม-ซ/-มรด/-ร-ม/รด-ร/-มรด/"
+  document.getElementById('thm').innerHTML = s;
+}
+
+function song4() {
+  var s = "ลูกอม:"+"\n"+"/---ซ/ลดํดํ-/---มํ/รํดํรํ-/---ซ/ลดํลดํ/---มํ/รํดํรํ-/--มํ-/ซํมํรํดํ/---ล/ล-ซ-/ดํ-ดํ-/--ซฟ/-มฟ-/ล-มํ-/รํ---/"
+  document.getElementById('thm').innerHTML = s;
+}
+
+function song5() {
+  var s = "สาวสวนแตง:"+"\n"+"/----/---ดํ/--ลซ/ฟซลดํ/--ซล/ดํลซฟ/-ฟรฟ/ซลฟซ/"+"\n"+"/----/ดํลซฟ/--ซล/ดํลซฟ/---ร/ฟซฟด/-รฟซ/ดํลซฟ/"
+  document.getElementById('thm').innerHTML = s;
+}
+
 //convert
 function convert() {
 	thmtextarea = document.getElementById('thm');
@@ -9,34 +40,6 @@ function convert() {
   note = note.replace(/\n/g,'');
 
 	note = note.replace(/\//g,'');
-    //bb
-  note = note.replace(/ทํb-------/g,'1a#6,');
-  note = note.replace(/ทํb-----/g,'2a#.6,');
-  note = note.replace(/ทํb---/g,'2a#6,');
-  note = note.replace(/ทํb--/g,'4a#.6,');
-  note = note.replace(/ทํb-/g,'4a#6,');
-  note = note.replace(/ทํb/g,'8a#6,');
-
-  note = note.replace(/ทb-------/g,'1a#5,');
-  note = note.replace(/ทb-----/g,'2a#.5,');
-  note = note.replace(/ทb---/g,'2a#5,');
-  note = note.replace(/ทb--/g,'4a#.5,');
-  note = note.replace(/ทb-/g,'4a#5,');
-  note = note.replace(/ทb/g,'8a#5,');
-
-  note = note.replace(/ทฺb-------/g,'1a#4,');
-  note = note.replace(/ทฺb-----/g,'2a#.4,');
-  note = note.replace(/ทฺb---/g,'2a#4,');
-  note = note.replace(/ทฺb--/g,'4a#.4,');
-  note = note.replace(/ทฺb-/g,'4a#4,');
-  note = note.replace(/ทฺb/g,'8a#4,');
-
-  note = note.replace(/ทฺ-------/g,'1b4,');
-  note = note.replace(/ทฺ-----/g,'2b.4,');
-  note = note.replace(/ทฺ---/g,'2b4,');
-  note = note.replace(/ทฺ--/g,'4b.4,');
-  note = note.replace(/ทฺ-/g,'4b4,');
-  note = note.replace(/ทฺ/g,'8b4,');
 
   note = note.replace(/ทํ-------/g,'1b6,');
   note = note.replace(/ทํ-----/g,'2b.6,');
@@ -52,13 +55,6 @@ function convert() {
   note = note.replace(/ท-/g,'4b5,');
   note = note.replace(/ท/g,'8b5,');
 
-  note = note.replace(/ลฺ-------/g,'1a4,');
-  note = note.replace(/ลฺ-----/g,'2a.4,');
-  note = note.replace(/ลฺ---/g,'2a4,');
-  note = note.replace(/ลฺ--/g,'4a.4,');
-  note = note.replace(/ลฺ-/g,'4a4,');
-  note = note.replace(/ลฺ/g,'8a4,');
-
   note = note.replace(/ลํ-------/g,'1a6,');
   note = note.replace(/ลํ-----/g,'2a.6,');
   note = note.replace(/ลํ---/g,'2a6,');
@@ -73,13 +69,6 @@ function convert() {
   note = note.replace(/ล-/g,'4a5,');
   note = note.replace(/ล/g,'8a5,');
 
-  note = note.replace(/ซฺ-------/g,'1g4,');
-  note = note.replace(/ซฺ-----/g,'2g.4,');
-  note = note.replace(/ซฺ---/g,'2g4,');
-  note = note.replace(/ซฺ--/g,'4g.4,');
-  note = note.replace(/ซฺ-/g,'4g4,');
-  note = note.replace(/ซฺ/g,'8g4,');
-
   note = note.replace(/ซํ-------/g,'1g6,');
   note = note.replace(/ซํ-----/g,'2g.6,');
   note = note.replace(/ซํ---/g,'2g6,');
@@ -93,19 +82,6 @@ function convert() {
   note = note.replace(/ซ--/g,'4g.5,');
   note = note.replace(/ซ-/g,'4g5,');
   note = note.replace(/ซ/g,'8g5,');
-  //f#
-  note = note.replace(/ฟํ#-----/g,'2f#.6,');
-  note = note.replace(/ฟํ#---/g,'2f#6,');
-  note = note.replace(/ฟํ#--/g,'4f#.6,');
-  note = note.replace(/ฟํ#-/g,'4f#6,');
-  note = note.replace(/ฟํ#/g,'8f#6,');
-
-  note = note.replace(/ฟ#-------/g,'1f#5,');
-  note = note.replace(/ฟ#-----/g,'2f#.5,');
-  note = note.replace(/ฟ#---/g,'2f#5,');
-  note = note.replace(/ฟ#--/g,'4f#.5,');
-  note = note.replace(/ฟ#-/g,'4f#5,');
-  note = note.replace(/ฟ#/g,'8f#5,');
 
   note = note.replace(/ฟํ-------/g,'1f6,');
   note = note.replace(/ฟํ-----/g,'2f.6,');
@@ -177,17 +153,14 @@ function convert() {
   note = note.replace(/xx/g,'4p5,');
   note = note.replace(/x/g,'8p5,');
 
- document.getElementById('length').innerHTML = note.length;
- console.log(note.length);
- 
+	// console.log(note.length);
+  document.getElementById('length').innerHTML = note.length;
  // ลบ str สุดท้าย
 	var n = note.slice(0,-1);
 
 	var output = name + ":d=4,o=5,b=100:"+ n;
+	console.log(note.length);
 
 		rtttltextarea = document.getElementById('rtttl');
 		rtttltextarea.value = output;
-    console.log(output);
-
-
 }
