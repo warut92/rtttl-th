@@ -388,7 +388,7 @@
         }
 
         var osc = audioCtx.createOscillator();
-        osc.type = 'sine';
+        osc.type = 'triangle';
         osc.start(0);
 
         if (melody.length === 0) {
@@ -396,6 +396,7 @@
         }
 
         var note = melody[0];
+        document.getElementById('result').innerHTML =note.frequency + " Hz";
         console.log(note);
 
         osc.frequency.value = note.frequency;
