@@ -182,15 +182,16 @@ function convert() {
 
  // ลบ str สุดท้าย
 	var n = note.slice(0,-1);
+  var b = document.getElementById('bpm').value
+	var output = name + ":d=4,o=5,b=" + b + ":"+ n;
 
-	var output = name + ":d=4,o=5,b=100:"+ n;
-
-		rtttltextarea = document.getElementById('rtttl');
-		rtttltextarea.value = output;
+		// rtttltextarea = document.getElementById('rtttl');
+		// rtttltextarea.value = output;
+		document.getElementById('rtttl').value = output;
     console.log(output);
 }
 
-function alphabet(thm) {
+function alphabet() {
 	var note = document.getElementById('thm').value;
 	note = note.replace(/1/g,'ด');
 	note = note.replace(/2/g,'ร');
@@ -200,11 +201,37 @@ function alphabet(thm) {
 	note = note.replace(/6/g,'ล');
 	note = note.replace(/7/g,'ท');
 	note = note.replace(/\*/g,'ํ');
+	note = note.replace(/\+/g,'ํ');
 	note = note.replace(/\./g,'ฺ');
+	note = note.replace(/ /g,'/');
 
 	document.getElementById('thm').value = note;
 	// var output = note;
 	// result = document.getElementById('thm').innerHTML;
 	// result.value = output;
 	// console.log(result);
+}
+
+function numberal() {
+	var thmtext = document.getElementById('thm').value;
+	i = thmtext.split(':')
+	note = i[1]
+
+	note = note.replace(/ด/g,'1');
+	note = note.replace(/ร/g,'2');
+	note = note.replace(/ม/g,'3');
+	note = note.replace(/ฟ/g,'4');
+	note = note.replace(/ซ/g,'5');
+	note = note.replace(/ล/g,'6');
+	note = note.replace(/ท/g,'7');
+	note = note.replace(/ํ/g,'*');
+	note = note.replace(/ฺ/g,'.');
+
+	document.getElementById('thm').value = i[0] + ":" + note;
+}
+
+function changeMelody() {
+	var x = document.getElementById("melody").value;
+	document.getElementById("thm").innerHTML = x;
+	console.log(x);
 }

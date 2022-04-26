@@ -47,8 +47,9 @@
       <h1>แปลงโน้ตไทยเป็น RTTTL</h1>
     </div>
     <h4>โน้ตไทย</h4>
-
     <select id="melody" onchange="changeMelody()">
+      <option value="none">เลือกเพลง:
+      <optgroup label="เพลงไทยเดิม">
       <option value="ลาวครวญ:
 /----/----/-ซ-ม/รดรม/----/-ด-ร/-ด-ม/-รรร/
 /---ซ/-ซซซ/ลซมซ/-ล-ดํ/---ดํ/-ดํดํดํ/-ซ-ม/รด-ร/">ลาวครวญ
@@ -61,33 +62,49 @@
       <option value="แขกบรเทศ:
 /ดํลลล/ดํลลล/ดํซซซ/ดํลซม/ซมรด/ซดรม/ซลซม/ซมรด/
 /มมซร/มรดล/ซมซล/ซลดํรํ/ซมรด/ซดรม/ซลซม/ซมรด/">แขกบรเทศ
-      <option value="ลูกอม:
+</optgroup>
+      <optgroup label="เพลงป๊อป">
+        <option value="ลูกอม:
 /---ซ/ลดํดํ-/---มํ/รํดํรํ-/---ซ/ลดํลดํ/---มํ/รํดํรํ-/
 /--มํ-/ซํมํรํดํ/---ล/ล-ซ-/ดํ-ดํ-/--ซฟ/-มฟ-/ล-มํ-/รํ---/">ลูกอม
-      <option value="สาวสวนแตง:
+  <option value="สายตาหลอกกันไม่ได้:
+/---ท/-ดํ-รํ/---ท/ลซ-ซ/-ม-ซ/-รํ-รํ/--ท-/
+/----/---รํ/ดํทดํท/-ซซ-/มร--/-ม-ซ/-ล-ท/--xดํ/--xท/
+/--xท/-ดํ-รํ/---ท/ลซ-ซ/-ม-ซ/-รํ-รํ/--ท-/
+/----/--ทท/ดํทดํรํ/ท-ซ-/--มร/-มซ-/-ล-ซ/---x/">สายตาหลอกกันไม่ได้
+      <option value="ตายทั้งเป็น:
+/----/---ท/-ล-ล/-ซล-/---ซ/-ล-ท/-ล-ล/-ซล-/
+/---ท/-รํ-มํ/-รํ-รํ/-ทรํ-/----/-รํ-มํ/-รํ-รํ/-ทรํ-/
+/---รํ/-มํ-ท/-ล-ล/-ซล-/---ซ/-ล-ท/-ล-ล/-ซล-/
+/---ท/-รํ-มํ/-รํ-รํ/-ทรํ-/----/-รํ-มํ/-รํ-รํ/-ทรํ-/
+/---มํ/---ซํ/----/-มํ--/----/---ซํ/-ซํ-ซํ/-ซํ-ฟํ#/
+/-มํ-มํ/-มํ-มํ/----/-รํ--/----/-ฟํ--/-ฟํ-ฟํ/-มํมํ-/
+/-ท-ดํ/-รํ-ท/---ซ/-ล--/----/-ล-ท/---ล/---ซ/
+/---ล/---ซ/----/----/----/----/----/----/
+/-ซ-ซ/-ซ-ซํ/----/-มํ--/----/---ซํ/-ซํ-ซํ/-ซํ-ฟํ#/
+/-มํ-มํ/-มํ-มํ/----/-รํ---/---/-ฟํ--/-ฟํ-ฟํ/-มํมํ-/
+-ท-ดํ/-รํ-ท/---ล/-ล--/----/-ล-ท/---ล/---ซ/
+---ล/---ซ/----/----/----/----/----/----/">ตายทั้งเป็น
+      </optgroup>
+      <optgroup label="เพลงลูกทุ่ง">
+        <option value="สาวสวนแตง:
 /----/---ดํ/--ลซ/ฟซลดํ/--ซล/ดํลซฟ/-ฟรฟ/ซลฟซ/
 /----/ดํลซฟ/--ซล/ดํลซฟ/---ร/ฟซฟด/-รฟซ/ดํลซฟ/">สาวสวนแตง
-      <option value="นิราศเวียงพิงค์:
+        <option value="นิราศเวียงพิงค์:
 /----/---ด/--รม/ซลซล/--ดํม/ซลซล/--ซม/ซมรม/
 /----/xมซด/--รม/รมลฺด/--รม/รมซด/--ซฺด/รมซม/
 /----/-มซล/--ซม/รมดร/--มร/ดลฺซฺด/-ลฺซฺลฺ/ดลฺซฺลฺ/
 /----/---ด/--รม/ซลซล/--ดํม/ซลซล/--ซม/ซมรม/
 /----/xมซด/--รม/รมลฺด/--รม/รมซด/--ซฺด/รมซม/
 /----/-มซล/--ซม/รมดร/--มร/ดลฺซฺด/-ลฺซฺลฺ/ดลฺซฺลฺ/---">นิราศเวียงพิงค์
+      </optgroup>
     </select>
 
-    <script>
-      function changeMelody() {
-        var x = document.getElementById("melody").value;
-        document.getElementById("thm").innerHTML = x;
-      }
-    </script>
-    <button class="btn btn-secondary" onmousedown="alphabet()">แปลงโน้ต</button>
     <br>
     <br>
     <div class="rows">
 
-      <div class="">
+      <div>
         <p><textarea id="thm" value="" class="" rows="3" cols="32">ลาวครวญ:
 /----/----/-ซ-ม/รดรม/----/-ด-ร/-ด-ม/-รรร/
 /---ซ/-ซซซ/ลซมซ/-ล-ดํ/---ดํ/-ดํดํดํ/-ซ-ม/รด-ร/
@@ -95,10 +112,42 @@
         <p>
         <details>
           <summary>ตัวเลือกอื่น ๆ</summary>
-          <small>อัปโหลดไฟล์ .txt :</small> <input type="file" onchange="readFile(this)"></input>
+          <button class="btn btn-warning" onmousedown="alphabet()">1⇨ด</button>
+          <button class="btn btn-warning" onmousedown="numberal()">ด⇨1</button>
+          <br>
+          <input type="file" onchange="readFile(this)"></input>
           <button class="btn btn-danger" type="button" value="save" onclick="saveTextAsFile()">
             <span>บันทึกไฟล์</span>
           </button>
+          <br>
+          <label for="beat">BPM:</label>
+  <input type="number" id="bpm" name="beat" min="25" max="900"2 value="100">
+  Type of wave:<select id="type">
+    <option value="sine">Sine</option>
+    <option value="square">Square</option>
+    <option value="sawtooth">Sawtooth</option>
+    <option value="triangle">Triangle</option>
+  </select>
+  Key:<select id="key">
+    <option value="0">A♯/B♭</option>
+    <option value="1">C</option>
+    <option value="2">C♯/D♭</option>
+    <option value="3">D</option>
+    <option value="4">D♯/E♭</option>
+    <option value="5">E</option>
+    <option value="6">F</option>
+    <option value="7">F♯/G♭</option>
+    <option value="8">G</option>
+    <option value="9">G♯/A♭</option>
+    <option value="10">A</option>
+  </select>
+  Octave:<select id="octave">
+    <option value="3">+2</option>
+    <option value="2">+1</option>
+    <option value="1" selected="selected">0</option>
+    <option value="2">-1</option>
+    <option value="3">-2</option>
+  </select>
         </details>
         <br>
         <button class="btn btn-success" onmousedown="convert();rtttlPlay.play(document.querySelector('.rtttl').value)">เล่น</button>

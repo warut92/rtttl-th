@@ -143,7 +143,7 @@
        * @returns {object} - An object specifying frequency and duration for each note
        */
       function parse(rtttl) {
-        console.log(rtttl);
+        // console.log(rtttl);
 
         var REQUIRED_SECTIONS_NUM = 3;
         var SECTIONS = rtttl.split(':');
@@ -313,10 +313,14 @@
           return 0;
         }
 
-        var C4 = 233.082; //261.63
+        var k = Number(document.getElementById('key').value);
+        var o = Number(document.getElementById('octave').value);
+
+        var DO4 = (233.082 + (28.544 * k)) / o; //C4 261.626
+          console.log(DO4);
         var TWELFTH_ROOT = Math.pow(2, 1 / 12);
         var N = _calculateSemitonesFromC4(note, octave);
-        var FREQUENCY = C4 * Math.pow(TWELFTH_ROOT, N);
+        var FREQUENCY = DO4 * Math.pow(TWELFTH_ROOT, N);
 
         return Math.round(FREQUENCY * 1e1) / 1e1;
       }
@@ -388,7 +392,8 @@
         }
 
         var osc = audioCtx.createOscillator();
-        osc.type = 'triangle';
+        var t = document.getElementById('type').value;
+        osc.type = t;
         osc.start(0);
 
         if (melody.length === 0) {
