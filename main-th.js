@@ -9,7 +9,9 @@ function convert() {
   note = note.replace(/\n/g,'');
 
 	note = note.replace(/\//g,'');
-    //bb
+
+	note = note.replace(/ *\([^)]*\) */g, "");
+    //Bb
   note = note.replace(/ทํb-------/g,'1a#6,');
   note = note.replace(/ทํb-----/g,'2a#.6,');
   note = note.replace(/ทํb---/g,'2a#6,');
@@ -203,7 +205,6 @@ function alphabet() {
 	note = note.replace(/\*/g,'ํ');
 	note = note.replace(/\+/g,'ํ');
 	note = note.replace(/\./g,'ฺ');
-	note = note.replace(/ /g,'/');
 
 	document.getElementById('thm').value = note;
 	// var output = note;
