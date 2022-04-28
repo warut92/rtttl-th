@@ -191,7 +191,7 @@
        * @returns {object}
        */
       function getDefaults(defaults) {
-        console.log(defaults);
+        // console.log(defaults);
         var VALUES = defaults.split(',');
 
         var VALUES_ARR = VALUES.map(function(value) {
@@ -315,9 +315,14 @@
 
         var k = Number(document.getElementById('key').value);
         var o = Number(document.getElementById('octave').value);
-
-        var DO4 = (233.082 + (28.544 * k)) / o; //C4 261.626
-          console.log(DO4);
+        console.log(o);
+          if (o >= 1) {
+            var DO4 = (233.082 + (28.544 * k)) * o; //C4 261.626
+          }
+          else {
+            var DO4 = (233.082 + (28.544 * k)) / (o * -1); //C4 261.626
+          }
+          console.log("Frequency:", DO4);
         var TWELFTH_ROOT = Math.pow(2, 1 / 12);
         var N = _calculateSemitonesFromC4(note, octave);
         var FREQUENCY = DO4 * Math.pow(TWELFTH_ROOT, N);

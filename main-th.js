@@ -180,7 +180,7 @@ function convert() {
   note = note.replace(/x/g,'8p5,');
 
  document.getElementById('length').innerHTML = note.length;
- console.log(note.length);
+ console.log("length:",note.length);
 
  // ลบ str สุดท้าย
 	var n = note.slice(0,-1);
@@ -190,7 +190,7 @@ function convert() {
 		// rtttltextarea = document.getElementById('rtttl');
 		// rtttltextarea.value = output;
 		document.getElementById('rtttl').value = output;
-    console.log(output);
+    console.log("RTTTL:",output);
 }
 
 function alphabet() {

@@ -35,6 +35,15 @@
       width: 100%;
       max-width: 900px;
     }
+
+    @media all and (max-width: 412px) {
+
+      textarea,
+      pre {
+        font-family: 'Tlwg Typist', monospace;
+        font-size: 14px;
+      }
+    }
   </style>
 
   <script src="main-th.js" type="text/javascript"></script>
@@ -49,20 +58,20 @@
     <h4>โน้ตไทย</h4>
     <select id="melody" onchange="changeMelody()">
       <option value="none">เลือกเพลง:
-      <optgroup label="เพลงไทยเดิม">
-      <option value="ลาวครวญ 2 ชั้น:
+        <optgroup label="เพลงไทยเดิม">
+          <option value="ลาวครวญ 2 ชั้น:
 /----/----/-ซ-ม/รดรม/----/-ด-ร/-ด-ม/-รรร/
 /---ซ/-ซซซ/ลซมซ/-ล-ดํ/---ดํ/-ดํดํดํ/-ซ-ม/รด-ร/">ลาวครวญ 2 ชั้น
-      <option value="ลาวต่อนก 2 ชั้น:
+          <option value="ลาวต่อนก 2 ชั้น:
 /----/----/รมซล/ซม-ซ/----/-ดํ-ล/-ซ-ม/รด-ร/
 /---ม/---ร/---ดํ/มํรํดํล/-ซ-ด/-ร-ม/ซลซม/-ร-ด/">ลาวต่อนก 2 ชั้น
-      <option value="ลาวจ้อย ชั้นเดียว:
+          <option value="ลาวจ้อย ชั้นเดียว:
 /-ดรม/ซด-ร/-ดรม/ซล-ซ/-มซม/รดรม/รมซม/ซล-ซ/
 /----/รมซล/--ดํล/ซม-ซ/-มรด/-ร-ม/รด-ร/-มรด/">ลาวจ้อย ชั้นเดียว
-      <option value="แขกบรเทศ ชั้นเดียว:
+          <option value="แขกบรเทศ ชั้นเดียว:
 /ดํลลล/ดํลลล/ดํซซซ/ดํลซม/ซมรด/ซดรม/ซลซม/ซมรด/
 /มมซร/มรดล/ซมซล/ซลดํรํ/ซมรด/ซดรม/ซลซม/ซมรด/">แขกบรเทศ ชั้นเดียว
-<option value="ลาวเสี่ยงเทียน 2 ชั้น:
+          <option value="ลาวเสี่ยงเทียน 2 ชั้น:
 (ท่อน 1)
 /----/----/-ลลล/ซลดํซ/---ฟ/-ม--/-ร-ซ/-ลซซ/
 /----/----/-ลลล/ซลดํซ/---ฟ/-ม--/-ร-ซ/-ลซซ/
@@ -73,17 +82,17 @@
 /----/----/ซลซม/ซรมซ/----/----/ซลซม/รด-ร/
 /-มํ-รํ/-ดํ-มํ/--ดํรํ/มํรํดํล/--ดํล/ซมซล/-ดํรํมํ/-รํ-ดํ/
 /-มํ-รํ/-ดํ-มํ/--ดํรํ/มํรํดํล/--ดํล/ซมซล/-ดํรํมํ/-รํ-ดํ/">ลาวเสี่ยงเทียน 2 ชั้น
-</optgroup>
-      <optgroup label="เพลงป๊อป">
-        <option value="ลูกอม:
+        </optgroup>
+        <optgroup label="เพลงป๊อป">
+          <option value="ลูกอม:
 /---ซ/ลดํดํ-/---มํ/รํดํรํ-/---ซ/ลดํลดํ/---มํ/รํดํรํ-/
 /--มํ-/ซํมํรํดํ/---ล/ล-ซ-/ดํ-ดํ-/--ซฟ/-มฟ-/ล-มํ-/รํ---/">ลูกอม
-  <option value="สายตาหลอกกันไม่ได้:
+          <option value="สายตาหลอกกันไม่ได้:
 /---ท/-ดํ-รํ/---ท/ลซ-ซ/-ม-ซ/-รํ-รํ/--ท-/
 /----/---รํ/ดํทดํท/-ซซ-/มร--/-ม-ซ/-ล-ท/--xดํ/--xท/
 /--xท/-ดํ-รํ/---ท/ลซ-ซ/-ม-ซ/-รํ-รํ/--ท-/
 /----/--ทท/ดํทดํรํ/ท-ซ-/--มร/-มซ-/-ล-ซ/---x/">สายตาหลอกกันไม่ได้
-      <option value="ตายทั้งเป็น:
+          <option value="ตายทั้งเป็น:
 /----/---ท/-ล-ล/-ซล-/---ซ/-ล-ท/-ล-ล/-ซล-/
 /---ท/-รํ-มํ/-รํ-รํ/-ทรํ-/----/-รํ-มํ/-รํ-รํ/-ทรํ-/
 /---รํ/-มํ-ท/-ล-ล/-ซล-/---ซ/-ล-ท/-ล-ล/-ซล-/
@@ -96,51 +105,51 @@
 /-มํ-มํ/-มํ-มํ/----/-รํ---/---/-ฟํ--/-ฟํ-ฟํ/-มํมํ-/
 -ท-ดํ/-รํ-ท/---ล/-ล--/----/-ล-ท/---ล/---ซ/
 ---ล/---ซ/----/----/----/----/----/----/">ตายทั้งเป็น
-<option value="แก้มน้องนางนั้นแดงกว่าใคร:
+          <option value="แก้มน้องนางนั้นแดงกว่าใคร:
 /----/---ล/ซลซล/ทลซม/
 /-ร--/-มซล/ซลซล/-มํรํ-/
 /----/-ทรํมํ/รํมํซํมํ/รํทท-/
 /----/-ทรํล/ทลซม/-ซล-/">แก้มน้องนางนั้นแดงกว่าใคร
-      </optgroup>
-      <optgroup label="เพลงลูกทุ่ง">
-        <option value="สาวสวนแตง:
+        </optgroup>
+        <optgroup label="เพลงลูกทุ่ง">
+          <option value="สาวสวนแตง:
 /----/---ดํ/--ลซ/ฟซลดํ/--ซล/ดํลซฟ/-ฟรฟ/ซลฟซ/
 /----/ดํลซฟ/--ซล/ดํลซฟ/---ร/ฟซฟด/-รฟซ/ดํลซฟ/">สาวสวนแตง
-        <option value="นิราศเวียงพิงค์:
+          <option value="นิราศเวียงพิงค์:
 /----/---ด/--รม/ซลซล/--ดํม/ซลซล/--ซม/ซมรม/
 /----/xมซด/--รม/รมลฺด/--รม/รมซด/--ซฺด/รมซม/
 /----/-มซล/--ซม/รมดร/--มร/ดลฺซฺด/-ลฺซฺลฺ/ดลฺซฺลฺ/
 /----/---ด/--รม/ซลซล/--ดํม/ซลซล/--ซม/ซมรม/
 /----/xมซด/--รม/รมลฺด/--รม/รมซด/--ซฺด/รมซม/
 /----/-มซล/--ซม/รมดร/--มร/ดลฺซฺด/-ลฺซฺลฺ/ดลฺซฺลฺ/---">นิราศเวียงพิงค์
-      </optgroup>
-      <optgroup label="วิธีการอ่านโน้ตไทย ">
-        <option value="แบบที่ 1:
+        </optgroup>
+        <optgroup label="วิธีการอ่านโน้ตไทย ">
+          <option value="แบบที่ 1:
 (1)
 /---ด/---ด/---ด/---ด/
 /---ด/---ร/---ม/---ด/
 (2)
 /----/---ด/----/---ร/
 /----/---ม/----/---ด/---">แบบที่ 1
-<option value="แบบที่ 2:
+          <option value="แบบที่ 2:
 (1)
 /-ด-ร/-ม-ด/-ด-ร/-ม-ด/
 /-ม-ฟ/-ซ-ซ/-ม-ฟ/-ซ-ซ/
 /-ล-ซ/-ม-ด/-ล-ซ/-ม-ด/
 /---ด/-ซฺ-ด/---ด/-ซฺ-ด/">แบบที่ 2
-<option value="แบบที่ 3:
+          <option value="แบบที่ 3:
 (1)
 /--ดร/--มด/--ดร/--มด/
 /--มฟ/--ซซ/--มฟ/--ซซ/
 /--ลซ/--มด/--ลซ/--มด/
 /--รด/--ซฺด/--รด/--ซฺด/">แบบที่ 3
-<option value="แบบที่ 4:
+          <option value="แบบที่ 4:
 (1)
 /-รดร/-มรด/-รดร/-มรด/
 /-รมฟ/-ซซซ/-รมฟ/-ซซซ/
 /-ซลซ/-มรด/-ซลซ/-มรด/
 /-มรด/-ดซฺด/-มรด/-ดซฺด/">แบบที่ 4
-<option value="แบบที่ 2-4:
+          <option value="แบบที่ 2-4:
 (1)
 /-ด-ร/-ม-ด/-ด-ร/-ม-ด/
 /-ม-ฟ/-ซ-ซ/-ม-ฟ/-ซ-ซ/
@@ -156,7 +165,7 @@
 /-รมฟ/-ซลซ/-รมฟ/-ซลซ/
 /-ซลซ/-มรด/-ซลซ/-มรด/
 /-มรด/-ดซฺด/-มรด/-ดซฺด/">แบบที่ 2-4
-      </optgroup>
+        </optgroup>
     </select>
 
     <br>
@@ -180,33 +189,33 @@
           </button>
           <br>
           <label for="beat">BPM:</label>
-  <input type="number" id="bpm" name="beat" min="25" max="900"2 value="100">
-  Type of wave:<select id="type">
-    <option value="sine">Sine</option>
-    <option value="square">Square</option>
-    <option value="sawtooth">Sawtooth</option>
-    <option value="triangle">Triangle</option>
-  </select>
-  Key:<select id="key">
-    <option value="0">A♯/B♭</option>
-    <option value="1">C</option>
-    <option value="2">C♯/D♭</option>
-    <option value="3">D</option>
-    <option value="4">D♯/E♭</option>
-    <option value="5">E</option>
-    <option value="6">F</option>
-    <option value="7">F♯/G♭</option>
-    <option value="8">G</option>
-    <option value="9">G♯/A♭</option>
-    <option value="10">A</option>
-  </select>
-  Octave:<select id="octave">
-    <option value="3">+2</option>
-    <option value="2">+1</option>
-    <option value="1" selected="selected">0</option>
-    <option value="2">-1</option>
-    <option value="3">-2</option>
-  </select>
+          <input type="number" id="bpm" name="beat" min="25" max="900" 2 value="100">
+          Type of wave:<select id="type">
+            <option value="sine">Sine</option>
+            <option value="square">Square</option>
+            <option value="sawtooth">Sawtooth</option>
+            <option value="triangle">Triangle</option>
+          </select>
+          Key:<select id="key">
+            <option value="0">A♯/B♭</option>
+            <option value="1">C</option>
+            <option value="2">C♯/D♭</option>
+            <option value="3">D</option>
+            <option value="4">D♯/E♭</option>
+            <option value="5">E</option>
+            <option value="6">F</option>
+            <option value="7">F♯/G♭</option>
+            <option value="8">G</option>
+            <option value="9">G♯/A♭</option>
+            <option value="10">A</option>
+          </select>
+          Octave:<select id="octave">
+            <option value="3">+2</option>
+            <option value="2">+1</option>
+            <option value="1" selected="selected">0</option>
+            <option value="-2">-1</option>
+            <option value="-3">-2</option>
+          </select>
         </details>
         <br>
         <button class="btn btn-success" onmousedown="convert();rtttlPlay.play(document.querySelector('.rtttl').value)">เล่น</button>
