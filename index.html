@@ -2,7 +2,7 @@
 <html lang="th">
 
 <head>
-  <title>เล่นโน้ตไทย Online</title>
+  <title>โน้ตไทย ดรมฟ Online</title>
   <meta name="description" content="Convert thai notation to RTTL" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="icon.png">
@@ -53,7 +53,7 @@
 <body>
   <div class="container">
     <div class="page-header">
-      <h1>เล่นโน้ตไทย Online</h1>
+      <h1>โน้ตไทย ดรมฟ Online</h1>
     </div>
     <h4>โน้ตไทย</h4>
     <select id="melody" onchange="changeMelody()">
@@ -110,6 +110,11 @@
 /-ร--/-มซล/ซลซล/-มํรํ-/
 /----/-ทรํมํ/รํมํซํมํ/รํทท-/
 /----/-ทรํล/ทลซม/-ซล-/">แก้มน้องนางนั้นแดงกว่าใคร
+  <option value="ทักครับ - Lipta:
+/----/-ซ-ท/--รํท/-ล-ซ/---ม/-ซ-ท/--รํท/-ล-ซ/
+/----/-ซ-ฟ#/--ซฟ#/-ม-ร/---ทฺ/-ร-ฟ#/--ซฟ#/-ม-ร/
+/----/-ซ-ท/--รํท/-ล-ซ/---ม/-ซ-ท/--รํท/-ล-ซ/
+/----/-มซฟ#/--ซฟ#/-ม-ร/---ม/-ล--/-ซ--/-">ทักครับ - Lipta
         </optgroup>
         <optgroup label="เพลงลูกทุ่ง">
           <option value="สาวสวนแตง:
@@ -180,8 +185,8 @@
         <p>
         <details>
           <summary>ตัวเลือกอื่น ๆ</summary>
-          <button class="btn btn-warning" onmousedown="alphabet()">1234 ⇨ ดรมฟ</button>
-          <button class="btn btn-warning" onmousedown="numberal()">ดรมฟ ⇨ 1234</button>
+          แปลงตัวโน้ต: <button class="btn btn-warning" onmousedown="changeText()" id="btn1">1234</button>
+
           <br>
           <input type="file" onchange="readFile(this)"></input>
           <button class="btn btn-danger" type="button" value="save" onclick="saveTextAsFile()">
@@ -240,46 +245,7 @@
     <a href="https://github.com/warut92/rtttl-th/">GitHub</a>
   </center>
   <script>
-    //file
-    //raedfile https://www.w3docs.com/learn-javascript/file-and-filereader.html
-    function readFile(input) {
-      let file = input.files[0];
-      let fileReader = new FileReader();
-      fileReader.readAsText(file);
-      fileReader.onload = function() {
-        document.getElementById("thm").value = fileReader.result;
-      };
-      fileReader.onerror = function() {
-        alert(fileReader.error);
-      };
-    }
-    //savefile https://stackoverflow.com/a/30740104
-    function saveTextAsFile() {
-      var textToWrite = document.getElementById("thm").value;
-      var textFileAsBlob = new Blob([textToWrite], {
-        type: "text/plain"
-      });
-      var fileNameToSaveAs = "ชื่อเพลง.txt";
 
-      var downloadLink = document.createElement("a");
-      downloadLink.download = fileNameToSaveAs;
-      downloadLink.innerHTML = "Download File";
-      if (window.webkitURL != null) {
-        // Chrome allows the link to be clicked
-        // without actually adding it to the DOM.
-        downloadLink.href = window.webkitURL.createObjectURL(textFileAsBlob);
-      } else {
-        // Firefox requires the link to be added to the DOM
-        // before it can be clicked.
-        downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
-        downloadLink.onclick = destroyClickedElement;
-        downloadLink.style.display = "none";
-        document.body.appendChild(downloadLink);
-      }
-      downloadLink.click();
-    }
-    // var button = document.getElementById("save");
-    // button.addEventListener("onclick", saveTextAsFile);
   </script>
   <script src="dist/index.umd.js"></script>
 
