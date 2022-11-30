@@ -183,10 +183,12 @@
 /---ซ/-ซซซ/ลซมซ/-ล-ดํ/---ดํ/-ดํดํดํ/-ซ-ม/รด-ร/
 </textarea></p>
         <p>
+          <button class="btn btn-success" onmousedown="convert();rtttlPlay.play(document.querySelector('.rtttl').value)">เล่น</button>
+          <button type="button" class="btn btn-danger" aria-label="Play" onClick="rtttlPlay.stop()">หยุด</button>
+          </p>
         <details>
-          <summary>ตัวเลือกอื่น ๆ</summary>
+          <summary>แผงควบคุมเพิ่มเติม</summary>
           แปลงตัวโน้ต: <button class="btn btn-warning" onmousedown="changeText()" id="btn1">1234</button>
-
           <br>
           <input type="file" onchange="readFile(this)"></input>
           <button class="btn btn-danger" type="button" value="save" onclick="saveTextAsFile()">
@@ -223,11 +225,11 @@
           </select>
         </details>
         <br>
-        <button class="btn btn-success" onmousedown="convert();rtttlPlay.play(document.querySelector('.rtttl').value)">เล่น</button>
-        <button type="button" class="btn btn-danger" aria-label="Play" onClick="rtttlPlay.stop()">หยุด</button>
-        </p>
-        ความยาว: <p id="length">0</p>
-        Frequency: <p id="result">0 Hz</p>
+<details>
+  <summary>ข้อมูลเฉพาะ</summary>
+  ความยาว: <p id="length">0</p>
+  Frequency: <p id="result">0 Hz</p>
+</details>
       </div>
       <div>
         <h4>RTTTL</h4>
@@ -245,6 +247,15 @@
     <a href="https://github.com/warut92/rtttl-th/">GitHub</a>
   </center>
   <script>
+  // localstorage in textarea https://jsfiddle.net/9KBWF/
+  var editor = document.querySelector("#thm");
+  if (window.localStorage["localNote"]) {
+      editor.value = window.localStorage["localNote"];
+  }
+
+  editor.addEventListener("keyup", function() {
+      window.localStorage["localNote"] = editor.value;
+  });
 
   </script>
   <script src="dist/index.umd.js"></script>
