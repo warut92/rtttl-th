@@ -2,6 +2,7 @@
 function convert() {
   thmtextarea = document.getElementById('thm');
   data = thmtextarea.value;
+  console.log('DATA', data)
   i = data.split(":");
   name = i[0];
   note = i[1];
@@ -95,7 +96,7 @@ function convert() {
   note = note.replace(/ซ--/g, '4g.5,');
   note = note.replace(/ซ-/g, '4g5,');
   note = note.replace(/ซ/g, '8g5,');
-  //f#
+  //F#
   note = note.replace(/ฟํ#-----/g, '2f#.6,');
   note = note.replace(/ฟํ#---/g, '2f#6,');
   note = note.replace(/ฟํ#--/g, '4f#.6,');
@@ -179,18 +180,24 @@ function convert() {
   note = note.replace(/xx/g, '4p5,');
   note = note.replace(/x/g, '8p5,');
 
-  document.getElementById('length').innerHTML = note.length;
-  console.log("length:", note.length);
+  // สำหรับแสดงความยาวของโน้ต
+  // document.getElementById('length').i = note.length;
+  // console.log("length:", note.length);
 
   // ลบ str สุดท้าย
   var n = note.slice(0, -1);
-  var b = document.getElementById('bpm').value
+  // ตั้งไว้เผื่อใช้
+  var b = 100
   var output = name + ":d=4,o=5,b=" + b + ":" + n;
 
   // rtttltextarea = document.getElementById('rtttl');
   // rtttltextarea.value = output;
-  document.getElementById('rtttl').value = output;
-  console.log("RTTTL:", output);
+  document.getElementById('rtttl').innerHTML = output;
+  console.log("RTTTL:", typeof output);
+
+  let rtttlText = document.getElementById('rtttl').value;
+  console.log('RTTTLTEXT', rtttlText)
+
 }
 
 function alphabet() {
