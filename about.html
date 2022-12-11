@@ -20,18 +20,51 @@
 <body>
   <div class="container">
     <div class="page-header">
-      <h1>อธิบาย - แปลงโน้ตไทยเป็น RTTTL</h1>
+      <h1>คำอธิบาย - ดรมฟ Online</h1>
     </div>
-    <h4>คำแนะนำเบื้องต้น</h4>
-    <p>กำหนดให้ <code>x</code> เป็นสัญลักษณ์ตัวหยุดโดยเท่ากับ 1 จังหวะย่อย</p>
-    <p>หากต้องการระบุข้อความเพิ่มเติม ให้ระบุในเครื่องหมายวงเล็บ เช่น <code>(ท่อน 1)</code>
-    <h4>RTTTL</h4>
+    <h4>ตัวโน้ตและสัญลักษณ์</h4>
+    ตัวโน้ตแต่ละตัวมีค่า 1 จังหวะย่อย
+    <table cellpadding="5" cellspacing="1" border="1">
+    <tr><td>โน้ตไทย</td><td>โน้ตตัวเลข</td><td>ความหมาย</td></tr>
+    <tr><td>ด</td><td>1</td><td>เสียงโด </td></tr>
+    <tr><td>ร</td><td>2</td><td>เสียงเร</td></tr>
+    <tr><td>ม</td><td>3</td><td>เสียงมี</td></tr>
+    <tr><td>ฟ</td><td>4</td><td>เสียงฟา</td></tr>
+    <tr><td>ซ</td><td>5</td><td>เสียงซอล</td></tr>
+    <tr><td>ล</td><td>6</td><td>เสียงลา</td></tr>
+    <tr><td>ท</td><td>7</td><td>เสียงที</td></tr>
+    <tr><td>-ํ</td><td>*</td><td>เสียงสูง</td></tr>
+    <tr><td>-ฺ</td><td>.</td><td>เสียงต่ำ</td></tr>
+    </table>
+    <br>
+    <table cellpadding="5" cellspacing="1" border="1">
+    <tr><td>สัญลักษณ์</td><td>ความหมาย</td></tr>
+    <tr><td>-</td><td>แสดงความยาว 1 จังหวะย่อย</td></tr>
+    <tr><td>x</td><td>แสดงความเงียบ 1 จังหวะย่อย</td></tr>
+
+    <tr><td>/</td><td>ห้องเพลง</td></tr>
+    <tr><td>></td><td>เริ่มเล่นที่</td></tr>
+    </table>
+    <br>
+    <b>ไวยากรณ์</b> <pre>ชื่อเพลง (ระบุ BPM) : โน้ตดนตรี</pre> 
+    <p>หากต้องการระบุข้อความเพิ่มเติม ให้ระบุในเครื่องหมายวงเล็บ ที่ใดก็ได้หลังเครืื่องหมาย <code>:</code> เช่น <code>(ท่อน 1)</code>
+    <p>หมายเหตุ : ยังไม่รองรับโน้ตสบัด</p>
+    <h4>RTTTL?</h4>
     <p>RTTL คือ Ring Tone Text Transfer Language ซึ่งเป็นภาษาที่บริษัท Nokia พัฒนาขึ้นมาเพื่อการสร้างเสียงเรียกเข้าสำหรับโทรศัพท์มือถือในสมัยก่อนของ โปรดศึกษาเพื่อเติมได้<a
         href="https://en.wikipedia.org/wiki/Ring_Tone_Text_Transfer_Language">ที่นี่</a>หรือ<a href="https://www.mobilefish.com/tutorials/rtttl/rtttl_quickguide_specification.html">ที่นี่</a>
+        <br>
+    <h4>Log</h4>
+    <pre>
+      22-12-11: เพิ่มฟังก์ชันเล่นเฉพาะตำแหน่ง ด้วยเครื่องหมาย <code>></code>/การระบุ BPM ด้วยวงเล็บหลังชื่อเพลง
+    </pre>
 
 
     <hr>
-    <a href="index.html">กลับหน้าหลัก</a>
+    <center>
+      <a href="index.html">กลับหน้าหลัก</a>
+      <br>
+      <a href="https://github.com/warut92/rtttl-th/">GitHub</a>
+    </center>
   </div>
 
 </body>

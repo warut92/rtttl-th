@@ -250,7 +250,7 @@ function numberal() {
   i = thmtext.split(':')
   note = i[1]
   //regex ไม่แปลงสตริงใด ๆ ในเครื่องหมาย ()
-  note = note.replace(/ *\([^)]*\) */g, /(.)/);
+  // note = note.replace(/ *\([^)]*\) */g, /(\w*)/);
 
   note = note.replace(/ด/g, '1');
   note = note.replace(/ร/g, '2');
@@ -289,10 +289,10 @@ function saveTextAsFile() {
   var textFileAsBlob = new Blob([textToWrite], {
     type: "text/plain"
   });
-  var textSplite = textToWrite.split(":");
-  name = textSplite[0];
-  console.log(name);
-  var fileNameToSaveAs = name + ".txt";
+  var splitedText = textToWrite.split(":");
+  nameAndBPM = splitedText[0];
+  onlyName = nameAndBPM.split("(")
+  var fileNameToSaveAs = onlyName[0] + ".txt";
 
   var downloadLink = document.createElement("a");
   downloadLink.download = fileNameToSaveAs;

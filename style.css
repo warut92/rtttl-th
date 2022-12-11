@@ -3,7 +3,8 @@
 body,
 h1,
 h4,
-textarea {
+p,
+option {
   font-family: 'Tlwg Typist', monospace;
   color: black;
   background-color: white;
@@ -14,12 +15,12 @@ textarea {
   font-family: 'Tlwg Typist', monospace;
 }
 
-textarea,
-pre {
+pre, textarea {
   font-family: 'Tlwg Typist', monospace;
   font-size: 18px;
   width: 100%;
   max-width: 900px;
+  background-color: lightgray;
 }
 
 @media all and (max-width: 1080px) {
@@ -29,4 +30,9 @@ pre {
     font-family: 'Tlwg Typist', monospace;
     font-size: 14px;
   }
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
 }
