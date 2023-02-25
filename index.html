@@ -23,6 +23,7 @@
   <div class="container">
     <div class="page-header">
       <h1>ดรมฟ Online</h1>
+        <h4>แปลงโน้ตไทยเป็น RTTTL</h4>
     </div>
     <h4>โน้ตไทย</h4>
     <select id="melody" onchange="changeMelody()">
@@ -192,11 +193,11 @@
           </select>
         </details>
         <br>
-<details>
+<!-- <details>
   <summary>ข้อมูลเฉพาะ</summary>
   ความยาว: <p id="length">0</p>
   Frequency: <p id="result">0 Hz</p>
-</details>
+</details> -->
       </div>
       <div>
         <h4>RTTTL</h4>
@@ -224,8 +225,8 @@
       window.localStorage["localNote"] = editor.value;
   });
   </script>
-  
-  <script src="dist/index.umd.js"></script>
+
+  <script src="rtttl/index.umd.js"></script>
 
 </body>
 

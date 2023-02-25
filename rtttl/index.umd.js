@@ -406,7 +406,7 @@
         }
 
         var note = melody[0];
-        document.getElementById('result').innerHTML =note.frequency + " Hz";
+        // document.getElementById('result').innerHTML =note.frequency + " Hz";
         console.log(note);
 
         osc.frequency.value = note.frequency;
