@@ -234,9 +234,10 @@
   function getSongHash() {
     let song = document.getElementById('thm').value;
     location.hash = song;
-    // console.log(location.hash)
+    console.log(decodeURI(location.hash))
+    console.log(location.hash)
 
-    document.getElementById('thm').innerHTML = location.hash
+    document.getElementById('thm').innerHTML = decodeURI(location.hash)
   }
 getSongHash()
 
