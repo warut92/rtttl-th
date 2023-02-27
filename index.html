@@ -148,7 +148,7 @@
     <div class="rows">
 
       <div>
-        <p><textarea id="thm" value="" class="" rows="3" cols="32" oninput="addRowTextarea()" onfocus="addRowTextarea()">ลาวครวญ 2 ชั้น:
+        <p><textarea id="thm" value="" class="" rows="3" cols="32" oninput="addRowTextarea();getSongHash()" onfocus="addRowTextarea()">ลาวครวญ 2 ชั้น:
 /----/----/-ซ-ม/รดรม/----/-ด-ร/-ด-ม/-รรร/
 /---ซ/-ซซซ/ลซมซ/-ล-ดํ/---ดํ/-ดํดํดํ/-ซ-ม/รด-ร/
 </textarea></p>
@@ -229,6 +229,17 @@
   editor.addEventListener("keyup", function() {
       window.localStorage["localNote"] = editor.value;
   });
+
+  //สร้างลิงก์สำหรับการแชร์
+  function getSongHash() {
+    let song = document.getElementById('thm').value;
+    location.hash = song;
+    // console.log(location.hash)
+
+    document.getElementById('thm').innerHTML = location.hash
+  }
+getSongHash()
+
   </script>
 
   <script src="rtttl/index.umd.js"></script>
