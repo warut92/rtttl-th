@@ -20,6 +20,7 @@
 </head>
 
 <body>
+
   <div class="container">
     <div class="page-header">
       <h1>ดรมฟ Online</h1>
@@ -148,11 +149,19 @@
     <div class="rows">
 
       <div>
-        <p><textarea id="thm" value="" class="" rows="3" cols="32" oninput="addRowTextarea();getSongHash()" onfocus="addRowTextarea()">ลาวครวญ 2 ชั้น:
-/----/----/-ซ-ม/รดรม/----/-ด-ร/-ด-ม/-รรร/
-/---ซ/-ซซซ/ลซมซ/-ล-ดํ/---ดํ/-ดํดํดํ/-ซ-ม/รด-ร/
+        <p><textarea id="thm" value="" class="" rows="3" cols="32" oninput="addRowTextarea();" onfocus="addRowTextarea();getSongHash()">
 </textarea></p>
+<script>
 
+function loadShareSong() {
+  //โหลดเพลงก่อน
+  let shareSong = location.hash
+  // console.log('SHARESONG', shareSong)
+  let decodeSongSlice = shareSong.slice(1)
+  document.getElementById('thm').innerHTML= decodeURI(decodeSongSlice)
+}
+loadShareSong()
+</script>
           <button class="btn btn-success" onmousedown="convert();rtttlPlay.play(document.querySelector('.rtttl').value)">เล่น</button>
           <button type="button" class="btn btn-danger" aria-label="Play" onClick="rtttlPlay.stop()">หยุด</button>
 
@@ -219,25 +228,24 @@
   var lines = document.querySelector("textarea").value.split(/\r\n|\r|\n/).length;
   document.getElementById("thm").rows = lines;
 }
-
-  // localstorage in textarea https://jsfiddle.net/9KBWF/
-  var editor = document.querySelector("#thm");
-  if (window.localStorage["localNote"]) {
-      editor.value = window.localStorage["localNote"];
-  }
-
-  editor.addEventListener("keyup", function() {
-      window.localStorage["localNote"] = editor.value;
-  });
+  //
+  // // localstorage in textarea https://jsfiddle.net/9KBWF/
+  // var editor = document.querySelector("#thm");
+  // if (window.localStorage["localNote"]) {
+  //     editor.value = window.localStorage["localNote"];
+  // }
+  //
+  // editor.addEventListener("keyup", function() {
+  //     window.localStorage["localNote"] = editor.value;
+  // });
 
   //สร้างลิงก์สำหรับการแชร์
   function getSongHash() {
+    //สร้างตัวแปรสำหรับการสร้างลิงก์ใหม่
     let song = document.getElementById('thm').value;
-    location.hash = song;
-    console.log(decodeURI(location.hash))
-    console.log(location.hash)
-
-    document.getElementById('thm').innerHTML = decodeURI(location.hash)
+    song = song.replace(/\n/g,"%0A")
+    location.hash = song
+    // console.log('LOCATION.HASH string', location.hash)
   }
 getSongHash()
 
