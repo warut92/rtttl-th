@@ -20,7 +20,7 @@ pre, textarea {
   font-size: 18px;
   width: 100%;
   max-width: 900px;
-  background-color: lightgray;
+  /* background-color: lightgray; */
 }
 
 @media all and (max-width: 1080px) {

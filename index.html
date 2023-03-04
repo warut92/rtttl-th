@@ -149,14 +149,17 @@
     <div class="rows">
 
       <div>
-        <p><textarea id="thm" value="" class="" rows="3" cols="32" oninput="addRowTextarea();" onfocus="addRowTextarea();getSongHash()">
+        <!-- <textarea id="thm1">testarea</textarea> -->
+        <p><textarea type="text" id="thm" value="" class="" rows="3" cols="32" oninput="addRowTextarea();" onfocus="addRowTextarea();">
 </textarea></p>
+<script>
+</script>
 <script>
 
 function loadShareSong() {
-  //โหลดเพลงก่อน
+//   //โหลดเพลงก่อน
   let shareSong = location.hash
-  // console.log('SHARESONG', shareSong)
+//   // console.log('SHARESONG', shareSong)
   let decodeSongSlice = shareSong.slice(1)
   document.getElementById('thm').innerHTML= decodeURI(decodeSongSlice)
 }
@@ -164,7 +167,46 @@ loadShareSong()
 </script>
           <button class="btn btn-success" onmousedown="convert();rtttlPlay.play(document.querySelector('.rtttl').value)">เล่น</button>
           <button type="button" class="btn btn-danger" aria-label="Play" onClick="rtttlPlay.stop()">หยุด</button>
+          <button type="button" class="btn btn-primary" aria-label="Play" onClick="getSongHash()">สร้างลิงก์</button>
+          <button type="button" class="btn btn-info" aria-label="Play" onClick="showKeyboard()">คีย์บอร์ด</button>
+          <br>
+          <div id="keyboard" style="display:none">
+            <br>
+            <button name="button" id="btn1" value="ด" onclick="keyboardInput(this)">ด</button>
+            <button name="button" id="btn1" value="ร" onclick="keyboardInput(this)">ร</button>
+            <button name="button" id="btn2" value="ม" onclick="keyboardInput(this)">ม</button>
+            <button name="button" id="btn3" value="ฟ" onclick="keyboardInput(this)">ฟ</button>
+            <button name="button" id="btn4" value="ซ" onclick="keyboardInput(this)">ซ</button>
+            <button name="button" id="btn5" value="ล" onclick="keyboardInput(this)">ล</button>
+            <button name="button" id="btn6" value="ท" onclick="keyboardInput(this)">ท</button>
+            <button name="button" id="btn7" value="ํ" onclick="keyboardInput(this)">สูง</button>
+            <button name="button" id="btn8" value="ฺ" onclick="keyboardInput(this)">ต่ำ</button>
+            <br>
+            <button name="button" id="btn9" value="-" onclick="keyboardInput(this)">-</button>
+            <button name="button" id="btn10" value="/" onclick="keyboardInput(this)">/</button>
+            <button name="button" id="btn10" value="#" onclick="keyboardInput(this)">#</button>
+            <button name="button" id="btn11" value="\n" onclick="keyboardInput(this)">Enter</button>
 
+          </div>
+          <script>
+          //ฟังก์ชันคีย์บอร์ดสำหรับมือถือ
+          //ใส่ค่าโน้ต/สัญญลักษณ์ที่ต้องการ
+          let thmNote = document.getElementById('thm').value
+          function keyboardInput(note) {
+            thmNote += note.value
+            document.getElementById('thm').innerHTML = thmNote
+            console.log('THMNOTE ', thmNote )
+          }
+          //แสดง/ซ่อนคีย์บอร๋ด
+          function showKeyboard() {
+            let k = document.getElementById('keyboard')
+            if (k.style.display === "none") {
+              k.style.display = "block"
+            } else {
+              k.style.display = "none"
+            }
+          }
+          </script>
         <details>
           <summary>แผงควบคุมเพิ่มเติม</summary>
           แปลงตัวโน้ต: <button class="btn btn-warning" onmousedown="changeText()" id="btn1">1234</button>

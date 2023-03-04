@@ -1,4 +1,5 @@
 //ฟังก์ชันแปลงตัวโน้ตไทยเป็น rtttl
+let splitedNote = ""
 function convert() {
   thmtextarea = document.getElementById('thm');
   data = thmtextarea.value;
@@ -6,15 +7,15 @@ function convert() {
   i = data.split(":");
   name = i[0];
   beat = name.split("(");
-  console.log('BEAT', beat)
+  // console.log('BEAT', beat)
   splitedBeat = beat[1]
   //หากไม่ได้กำหนดไว้ จะตั้งค่าปริยายไว้ 100
   if (splitedBeat === undefined) {
     splitedBeat = "100 "
   }
   splitedBeat = splitedBeat.slice(0, -1)
-  console.log('SPLITEDBEAT', splitedBeat)
-
+  // console.log('SPLITEDBEAT', splitedBeat)
+  splitedBeat = splitedBeat * 2
   pureNote = i[1];
 
   //split เพื่อการเลือกเล่นเสียงเฉพาะที่
@@ -255,11 +256,43 @@ function convert() {
   var n = note.slice(0, -1);
 
   //ดึงค่า splitedBeat นำมาใส่
-
   var output = name + ":d=4,o=5,b=" + splitedBeat + ":" + n;
   // rtttltextarea = document.getElementById('rtttl');
   // rtttltextarea.value = output;
   document.getElementById('rtttl').value = output;
+
+  function positionOnNote() {
+    splitedNote //โน้ตที่จะนำมาเล่น มาเป็นอาร์เรย์ 0, 1
+    console.log('SPLITEDNOTE', splitedNote)
+    //ตรวจสอบความยาวของข้อมูลอาร์เรย์โน้ต
+    let index = ""
+    if (splitedNote.length === 1) {
+      index = 0
+    } else {
+      index = 1
+    }
+    let noteForPlay = splitedNote[index] // เอาเฉพาะ 1
+    noteForPlay = noteForPlay.split("") // นำมาทำให้เป็นอาร์เรย์ทุกตัว
+    console.log('NOTEFORPLAY', noteForPlay)
+
+    let slash = "/"
+    //หา index ของสัญลักษณ์ /
+    let filterSigns = noteForPlay.filter(sign => sign == slash)
+    console.log('FILTERSIGNS', filterSigns)
+
+    let indexsOfSign = [];
+    noteForPlay.filter(function(elem, index, array) {
+      if(elem === slash) {
+        indexsOfSign.push(index);
+        console.log('INDEXSOFSIGN.PUSH(INDEX)', indexsOfSign)
+        console.log(index);
+        }
+      })
+      noteForPlay[1]
+      console.log('NOTEFORPLAY[1]', noteForPlay[1])
+  }
+positionOnNote()
+
 }
 
 //ฟังก์ชันแปลงตัวเลขเป็นตัวโน้ตไทย
