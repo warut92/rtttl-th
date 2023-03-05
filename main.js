@@ -152,6 +152,13 @@ function convert() {
   note = note.replace(/ฟ#-/g, '4f#5,');
   note = note.replace(/ฟ#/g, '8f#5,');
 
+  note = note.replace(/ฟฺ-------/g, '1f4,');
+  note = note.replace(/ฟฺ-----/g, '2f.6,');
+  note = note.replace(/ฟฺ---/g, '2f4,');
+  note = note.replace(/ฟฺ--/g, '4f.6,');
+  note = note.replace(/ฟฺ-/g, '4f4,');
+  note = note.replace(/ฟฺ/g, '8f4,');
+
   note = note.replace(/ฟํ-------/g, '1f6,');
   note = note.replace(/ฟํ-----/g, '2f.6,');
   note = note.replace(/ฟํ---/g, '2f6,');
@@ -165,6 +172,13 @@ function convert() {
   note = note.replace(/ฟ--/g, '4f.5,');
   note = note.replace(/ฟ-/g, '4f5,');
   note = note.replace(/ฟ/g, '8f5,');
+
+  note = note.replace(/มฺ-------/g, '1e4,');
+  note = note.replace(/มฺ-----/g, '2e.6,');
+  note = note.replace(/มฺ---/g, '2e4,');
+  note = note.replace(/มฺ--/g, '4e.6,');
+  note = note.replace(/มฺ-/g, '4e4,');
+  note = note.replace(/มฺ/g, '8e4,');
 
   note = note.replace(/มํ-------/g, '1e6,');
   note = note.replace(/มํ-----/g, '2e.6,');
@@ -194,6 +208,13 @@ function convert() {
   note = note.replace(/ร#-/g, '4d#5,');
   note = note.replace(/ร#/g, '8d#5,');
   //D
+  note = note.replace(/รฺ-------/g, '1d4,');
+  note = note.replace(/รฺ-----/g, '2d.4,');
+  note = note.replace(/รฺ---/g, '2d4,');
+  note = note.replace(/รฺ--/g, '4d.4,');
+  note = note.replace(/รฺ-/g, '4d4,');
+  note = note.replace(/รฺ/g, '8d4,');
+
   note = note.replace(/รํ-------/g, '1d6,');
   note = note.replace(/รํ-----/g, '2d.6,');
   note = note.replace(/รํ---/g, '2d6,');
@@ -222,6 +243,13 @@ function convert() {
   note = note.replace(/ด#-/g, '4c#5,');
   note = note.replace(/ด#/g, '8c#5,');
   //C
+  note = note.replace(/ดฺ-------/g, '1c4,');
+  note = note.replace(/ดฺ-----/g, '2c.4,');
+  note = note.replace(/ดฺ---/g, '2c4,');
+  note = note.replace(/ดฺ--/g, '4c.4,');
+  note = note.replace(/ดฺ-/g, '4c4,');
+  note = note.replace(/ดฺ/g, '8c4,');
+  
   note = note.replace(/ดํ-------/g, '1c6,');
   note = note.replace(/ดํ-----/g, '2c.6,');
   note = note.replace(/ดํ---/g, '2c6,');
