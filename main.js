@@ -15,7 +15,7 @@ function convert() {
   }
   splitedBeat = splitedBeat.slice(0, -1)
   // console.log('SPLITEDBEAT', splitedBeat)
-  splitedBeat = splitedBeat * 2
+
   pureNote = i[1];
 
   //split เพื่อการเลือกเล่นเสียงเฉพาะที่
@@ -256,9 +256,7 @@ function convert() {
   var n = note.slice(0, -1);
 
   //ดึงค่า splitedBeat นำมาใส่
-  var output = name + ":d=4,o=5,b=" + splitedBeat + ":" + n;
-  // rtttltextarea = document.getElementById('rtttl');
-  // rtttltextarea.value = output;
+  var output = name + ":d=8,o=5,b=" + splitedBeat + ":" + n;
   document.getElementById('rtttl').value = output;
 
   function positionOnNote() {
