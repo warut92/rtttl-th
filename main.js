@@ -2,6 +2,7 @@
 let splitedNote = ""
 function convert() {
   thmtextarea = document.getElementById('thm');
+
   data = thmtextarea.value;
   // console.log(data);
   i = data.split(":");
@@ -283,22 +284,14 @@ function convert() {
     let indexsOfSign = [];
     noteForPlay.filter(function(elem, index, array) {
       if(elem === slash) {
+        //นำ index ของสัญลักษณ์นำมาร่วมกันหมดเป็นอาร์เรย์
         indexsOfSign.push(index);
         console.log('INDEXSOFSIGN.PUSH(INDEX)', indexsOfSign)
         }
       })
-      noteForPlay[1]
-      console.log('NOTEFORPLAY[1]', noteForPlay[1])
+      return indexsOfSign;
   }
 positionOnNote()
-    function setPoRange() {
-      console.log("setPoRange!");
-      const thmtextarea1 = document.getElementById('thm');
-    thmtextarea1.focus()
-      thmtextarea1.setSelectionRange(0,1)
-
-    }
-    setPoRange()
 }
 
 //ฟังก์ชันแปลงตัวเลขเป็นตัวโน้ตไทย
