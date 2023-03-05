@@ -5,9 +5,10 @@ function convert() {
   data = thmtextarea.value;
   // console.log(data);
   i = data.split(":");
-  name = i[0];
-  beat = name.split("(");
+  nameWithBeat = i[0];
+  beat = nameWithBeat.split("(");
   // console.log('BEAT', beat)
+  name = beat[0]
   splitedBeat = beat[1]
   //หากไม่ได้กำหนดไว้ จะตั้งค่าปริยายไว้ 100
   if (splitedBeat === undefined) {
@@ -263,34 +264,41 @@ function convert() {
     splitedNote //โน้ตที่จะนำมาเล่น มาเป็นอาร์เรย์ 0, 1
     console.log('SPLITEDNOTE', splitedNote)
     //ตรวจสอบความยาวของข้อมูลอาร์เรย์โน้ต
-    let index = ""
+    let indexOfNote = ""
+    //ถ้าความยาวของอาร์เรย์เท่า่กับ 1 ให้ใช้ indexOfNote ลำดับที่ 0 ถ้าไม่ก็ใช้ 1 (สร้างตรงนี้เพื่อจะไปเลือกอาร์เรย์ของ splitedNote)
     if (splitedNote.length === 1) {
-      index = 0
+      indexOfNote = 0
     } else {
-      index = 1
+      indexOfNote = 1
     }
-    let noteForPlay = splitedNote[index] // เอาเฉพาะ 1
-    noteForPlay = noteForPlay.split("") // นำมาทำให้เป็นอาร์เรย์ทุกตัว
+    let noteForPlay = splitedNote[indexOfNote] // เอาเฉพาะ 1
+    noteForPlay = noteForPlay.split("") // นำมาทำให้โน้ตแต่ละตัวเป็นอาร์เรย์ทุกตัว
     console.log('NOTEFORPLAY', noteForPlay)
-
+    //สัญญลักษณ์ที่ต้องการค้นหา
     let slash = "/"
-    //หา index ของสัญลักษณ์ /
+    //หาเฉพาะข้อมูลอาร์เรย์ของสัญลักษณ์
     let filterSigns = noteForPlay.filter(sign => sign == slash)
     console.log('FILTERSIGNS', filterSigns)
-
+    //หา index ของ filterSigns
     let indexsOfSign = [];
     noteForPlay.filter(function(elem, index, array) {
       if(elem === slash) {
         indexsOfSign.push(index);
         console.log('INDEXSOFSIGN.PUSH(INDEX)', indexsOfSign)
-        console.log(index);
         }
       })
       noteForPlay[1]
       console.log('NOTEFORPLAY[1]', noteForPlay[1])
   }
 positionOnNote()
+    function setPoRange() {
+      console.log("setPoRange!");
+      const thmtextarea1 = document.getElementById('thm');
+    thmtextarea1.focus()
+      thmtextarea1.setSelectionRange(0,1)
 
+    }
+    setPoRange()
 }
 
 //ฟังก์ชันแปลงตัวเลขเป็นตัวโน้ตไทย

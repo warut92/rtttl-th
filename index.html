@@ -24,7 +24,7 @@
   <div class="container">
     <div class="page-header">
       <h1>ดรมฟ Online</h1>
-        <h4>แปลงโน้ตไทยเป็น RTTTL</h4>
+      <h4>แปลงโน้ตไทยเป็น RTTTL</h4>
     </div>
     <h4>โน้ตไทย</h4>
     <select id="melody" onchange="changeMelody()">
@@ -81,7 +81,7 @@
 /-ร--/-มซล/ซลซล/-มํรํ-/
 /----/-ทรํมํ/รํมํซํมํ/รํทท-/
 /----/-ทรํล/ทลซม/-ซล-/">แก้มน้องนางนั้นแดงกว่าใคร
-  <option value="ทักครับ - Lipta(160):
+          <option value="ทักครับ - Lipta(160):
 /----/-ซ-ท/--รํท/-ล-ซ/---ม/-ซ-ท/--รํท/-ล-ซ/
 /----/-ซ-ฟ#/--ซฟ#/-ม-ร/---ทฺ/-ร-ฟ#/--ซฟ#/-ม-ร/
 /----/-ซ-ท/--รํท/-ล-ซ/---ม/-ซ-ท/--รํท/-ล-ซ/
@@ -150,43 +150,34 @@
 
       <div>
         <!-- <textarea id="thm1">testarea</textarea> -->
-        <p><textarea type="text" id="thm" value="" class="" rows="3" cols="32" oninput="addRowTextarea();" onfocus="addRowTextarea();">
+        <p><textarea type="text" id="thm" value="" class="" rows="3" cols="32" oninput="addRowTextarea();" onfocus="addRowTextarea();" onload="this.focus()">
 </textarea></p>
-<script>
-</script>
-<script>
-
-function loadShareSong() {
-//   //โหลดเพลงก่อน
-  let shareSong = location.hash
-//   // console.log('SHARESONG', shareSong)
-  let decodeSongSlice = shareSong.slice(1)
-  document.getElementById('thm').innerHTML= decodeURI(decodeSongSlice)
-}
-loadShareSong()
-</script>
-          <button class="btn btn-success" onmousedown="convert();rtttlPlay.play(document.querySelector('.rtttl').value)">เล่น</button>
-          <button type="button" class="btn btn-danger" aria-label="Play" onClick="rtttlPlay.stop()">หยุด</button>
+        <script>
+        </script>
+        <script>
+        </script>
+        <button class="btn btn-success" onmousedown="convert();rtttlPlay.play(document.querySelector('.rtttl').value)">เล่น</button>
+        <button type="button" class="btn btn-danger" aria-label="Play" onClick="rtttlPlay.stop()">หยุด</button>
+        <br>
+        <div id="keyboard" style="display:none">
           <br>
-          <div id="keyboard" style="display:none">
-            <br>
-            <button name="button" id="btn1" value="ด" onclick="keyboardInput(this)">ด</button>
-            <button name="button" id="btn1" value="ร" onclick="keyboardInput(this)">ร</button>
-            <button name="button" id="btn2" value="ม" onclick="keyboardInput(this)">ม</button>
-            <button name="button" id="btn3" value="ฟ" onclick="keyboardInput(this)">ฟ</button>
-            <button name="button" id="btn4" value="ซ" onclick="keyboardInput(this)">ซ</button>
-            <button name="button" id="btn5" value="ล" onclick="keyboardInput(this)">ล</button>
-            <button name="button" id="btn6" value="ท" onclick="keyboardInput(this)">ท</button>
-            <button name="button" id="btn7" value="ํ" onclick="keyboardInput(this)">สูง</button>
-            <button name="button" id="btn8" value="ฺ" onclick="keyboardInput(this)">ต่ำ</button>
-            <br>
-            <button name="button" id="btn9" value="-" onclick="keyboardInput(this)">-</button>
-            <button name="button" id="btn10" value="/" onclick="keyboardInput(this)">/</button>
-            <button name="button" id="btn10" value="#" onclick="keyboardInput(this)">#</button>
-            <button name="button" id="btn11" value="\n" onclick="keyboardInput(this)">Enter</button>
+          <button name="button" id="btn1" value="ด" onclick="keyboardInput(this)">ด</button>
+          <button name="button" id="btn1" value="ร" onclick="keyboardInput(this)">ร</button>
+          <button name="button" id="btn2" value="ม" onclick="keyboardInput(this)">ม</button>
+          <button name="button" id="btn3" value="ฟ" onclick="keyboardInput(this)">ฟ</button>
+          <button name="button" id="btn4" value="ซ" onclick="keyboardInput(this)">ซ</button>
+          <button name="button" id="btn5" value="ล" onclick="keyboardInput(this)">ล</button>
+          <button name="button" id="btn6" value="ท" onclick="keyboardInput(this)">ท</button>
+          <button name="button" id="btn7" value="ํ" onclick="keyboardInput(this)">สูง</button>
+          <button name="button" id="btn8" value="ฺ" onclick="keyboardInput(this)">ต่ำ</button>
+          <br>
+          <button name="button" id="btn9" value="-" onclick="keyboardInput(this)">-</button>
+          <button name="button" id="btn10" value="/" onclick="keyboardInput(this)">/</button>
+          <button name="button" id="btn10" value="#" onclick="keyboardInput(this)">#</button>
+          <button name="button" id="btn11" value="\n" onclick="keyboardInput(this)">Enter</button>
 
-          </div>
-          <script>
+        </div>
+        <script>
           //ฟังก์ชันคีย์บอร์ดสำหรับมือถือ
           //ใส่ค่าโน้ต/สัญญลักษณ์ที่ต้องการ
           function keyboardInput(note) {
@@ -205,10 +196,12 @@ loadShareSong()
               k.style.display = "none"
             }
           }
-          </script>
+        </script>
         <details>
           <summary>แผงควบคุมเพิ่มเติม</summary>
           <button type="button" class="btn btn-primary" aria-label="Play" onClick="getSongHash()">สร้างลิงก์</button>
+          <textarea id="hashlink">
+          </textarea>
           <button type="button" class="btn btn-info" aria-label="Play" onClick="showKeyboard()">คีย์บอร์ด</button>
           แปลงตัวโน้ต: <button class="btn btn-warning" onmousedown="changeText()" id="btn1">1234</button>
           <br>
@@ -245,7 +238,7 @@ loadShareSong()
           </select>
         </details>
         <br>
-<!-- <details>
+        <!-- <details>
   <summary>ข้อมูลเฉพาะ</summary>
   ความยาว: <p id="length">0</p>
   Frequency: <p id="result">0 Hz</p>
@@ -267,31 +260,42 @@ loadShareSong()
     <a href="https://github.com/warut92/rtttl-th/">GitHub</a>
   </center>
   <script>
-  function addRowTextarea() {
-  var lines = document.querySelector("textarea").value.split(/\r\n|\r|\n/).length;
-  document.getElementById("thm").rows = lines;
-}
-  //
-  // // localstorage in textarea https://jsfiddle.net/9KBWF/
-  // var editor = document.querySelector("#thm");
-  // if (window.localStorage["localNote"]) {
-  //     editor.value = window.localStorage["localNote"];
-  // }
-  //
-  // editor.addEventListener("keyup", function() {
-  //     window.localStorage["localNote"] = editor.value;
-  // });
+    function addRowTextarea() {
+      var lines = document.querySelector("textarea").value.split(/\r\n|\r|\n/).length;
+      document.getElementById("thm").rows = lines;
+    }
+    //
+    // // localstorage in textarea https://jsfiddle.net/9KBWF/
+    // var editor = document.querySelector("#thm");
+    // if (window.localStorage["localNote"]) {
+    //     editor.value = window.localStorage["localNote"];
+    // }
+    //
+    // editor.addEventListener("keyup", function() {
+    //     window.localStorage["localNote"] = editor.value;
+    // });
 
-  //สร้างลิงก์สำหรับการแชร์
-  function getSongHash() {
-    //สร้างตัวแปรสำหรับการสร้างลิงก์ใหม่
-    let song = document.getElementById('thm').value;
-    song = song.replace(/\n/g,"%0A")
-    location.hash = song
-    // console.log('LOCATION.HASH string', location.hash)
-  }
-getSongHash()
+    //สร้างลิงก์สำหรับการแชร์
+    function getSongHash() {
+      //สร้างตัวแปรสำหรับการสร้างลิงก์ใหม่ โดยการกดปุ่มเพื่อรันฟังก์ชัน
+      let song = document.getElementById('thm').value;
+      song = song.replace(/\n/g, "%0A")
+      location.hash = song
+      document.getElementById('hashlink').innerHTML = location.hash
+      // console.log('LOCATION.HASH string', location.hash)
+    }
 
+    function loadShareSong() {
+      //โหลดเพลง หากลิงก์มีข้อมูลสำหรับโน้ต ให้ดำเนินการรับค่ามาใส่ใน textarea
+      if (location.hash) {
+        // console.log("do it!");
+        let shareSong = location.hash
+        // console.log('SHARESONG', shareSong)
+        let decodeSongSlice = shareSong.slice(1)
+        document.getElementById('thm').innerHTML = decodeURI(decodeSongSlice)
+      }
+    }
+    loadShareSong()
   </script>
 
   <script src="rtttl/index.umd.js"></script>
