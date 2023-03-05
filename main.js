@@ -260,7 +260,7 @@ function convert() {
   //ดึงค่า splitedBeat นำมาใส่
   var output = name + ":d=8,o=5,b=" + splitedBeat + ":" + n;
   document.getElementById('rtttl').value = output;
-
+ // to do ...
   function positionOnNote() {
     splitedNote //โน้ตที่จะนำมาเล่น มาเป็นอาร์เรย์ 0, 1
     console.log('SPLITEDNOTE', splitedNote)
