@@ -250,7 +250,7 @@ function convert() {
   note = note.replace(/xx/g, '4p5,');
   note = note.replace(/x/g, '8p5,');
 
-
+  note = note.replace(/'8/g, "16")
   // document.getElementById('length').innerHTML = note.length;
   // console.log("length:", note.length);
 
@@ -263,7 +263,7 @@ function convert() {
  // to do ...
   function positionOnNote() {
     splitedNote //โน้ตที่จะนำมาเล่น มาเป็นอาร์เรย์ 0, 1
-    console.log('SPLITEDNOTE', splitedNote)
+    // console.log('SPLITEDNOTE', splitedNote)
     //ตรวจสอบความยาวของข้อมูลอาร์เรย์โน้ต
     let indexOfNote = ""
     //ถ้าความยาวของอาร์เรย์เท่า่กับ 1 ให้ใช้ indexOfNote ลำดับที่ 0 ถ้าไม่ก็ใช้ 1 (สร้างตรงนี้เพื่อจะไปเลือกอาร์เรย์ของ splitedNote)
@@ -274,19 +274,19 @@ function convert() {
     }
     let noteForPlay = splitedNote[indexOfNote] // เอาเฉพาะ 1
     noteForPlay = noteForPlay.split("") // นำมาทำให้โน้ตแต่ละตัวเป็นอาร์เรย์ทุกตัว
-    console.log('NOTEFORPLAY', noteForPlay)
+    // console.log('NOTEFORPLAY', noteForPlay)
     //สัญญลักษณ์ที่ต้องการค้นหา
     let slash = "/"
     //หาเฉพาะข้อมูลอาร์เรย์ของสัญลักษณ์
     let filterSigns = noteForPlay.filter(sign => sign == slash)
-    console.log('FILTERSIGNS', filterSigns)
+    // console.log('FILTERSIGNS', filterSigns)
     //หา index ของ filterSigns
     let indexsOfSign = [];
     noteForPlay.filter(function(elem, index, array) {
       if(elem === slash) {
         //นำ index ของสัญลักษณ์นำมาร่วมกันหมดเป็นอาร์เรย์
         indexsOfSign.push(index);
-        console.log('INDEXSOFSIGN.PUSH(INDEX)', indexsOfSign)
+        // console.log('INDEXSOFSIGN.PUSH(INDEX)', indexsOfSign)
         }
       })
       return indexsOfSign;
