@@ -1,14 +1,10 @@
-//ฟังก์ชันแปลงตัวโน้ตไทยเป็น rtttl
-let splitedNote = ""
+//ฟังก์ชันสำหรับการแปลงโน้ตดนตรีไทยเป็นโน้ตรูปแบบ RTTTL รุ่น 0.1 66-3-9
 function convert() {
   thmtextarea = document.getElementById('thm');
-
   data = thmtextarea.value;
-  // console.log(data);
   i = data.split(":");
   nameWithBeat = i[0];
   beat = nameWithBeat.split("(");
-  // console.log('BEAT', beat)
   name = beat[0]
   splitedBeat = beat[1]
   //หากไม่ได้กำหนดไว้ จะตั้งค่าปริยายไว้ 100
@@ -16,10 +12,7 @@ function convert() {
     splitedBeat = "100 "
   }
   splitedBeat = splitedBeat.slice(0, -1)
-  // console.log('SPLITEDBEAT', splitedBeat)
-
   pureNote = i[1];
-
   //split เพื่อการเลือกเล่นเสียงเฉพาะที่
   splitedNote = pureNote.split(">");
   note = splitedNote[1];
@@ -27,12 +20,8 @@ function convert() {
     note = pureNote
   }
   //การแปลงโน้ต
-  note = note.replace(/\s/g, '');
-
   note = note.replace(/\n/g, '');
-
   note = note.replace(/\//g, '');
-
   //ลบ string ที่อยู่ในวงเล็บ คือเราจะไม่แปลงอะไรในวงเล็บ ก็เลยต้องลบทิ้งเสีย
   note = note.replace(/ *\([^)]*\) */g, "");
   //โน้ตไทยต่อไปนี้จะใช้ทางเพียงออ
@@ -405,166 +394,11 @@ function convert() {
   note = note.replace(/xxx/g, '4p.5,');
   note = note.replace(/xx/g, '4p5,');
   note = note.replace(/x/g, '8p5,');
-
-  //กลุ่มเสียงเงียบ
-  note = note.replace(/--------/g, '1p5,');
-  note = note.replace(/------/g, '2p.5,');
-  note = note.replace(/----/g, '2p5,');
-  note = note.replace(/---/g, '4p.5,');
-  note = note.replace(/--/g, '4p5,');
-  note = note.replace(/-/g, '8p5,');
-
-  //กลุ่มเสียงเงียบ
-  note = note.replace(/--------/g, '1p5,');
-  note = note.replace(/------/g, '2p.5,');
-  note = note.replace(/----/g, '2p5,');
-  note = note.replace(/---/g, '4p.5,');
-  note = note.replace(/--/g, '4p5,');
-  note = note.replace(/-/g, '8p5,');
   //โน้ตสบัด แปลงจากรูปแบบของ RTTTL
-  note = note.replace(/''8/g, "32")
   note = note.replace(/'8/g, "16")
-
   // ลบ string สุดท้าย
   var n = note.slice(0, -1);
-
   //ดึงค่า splitedBeat นำมาใส่
   var output = name + ":d=8,o=5,b=" + splitedBeat + ":" + n;
   document.getElementById('rtttl').value = output;
- // to do ...
-//   function positionOnNote() {
-//     splitedNote //โน้ตที่จะนำมาเล่น มาเป็นอาร์เรย์ 0, 1
-//     // console.log('SPLITEDNOTE', splitedNote)
-//     //ตรวจสอบความยาวของข้อมูลอาร์เรย์โน้ต
-//     let indexOfNote = ""
-//     //ถ้าความยาวของอาร์เรย์เท่า่กับ 1 ให้ใช้ indexOfNote ลำดับที่ 0 ถ้าไม่ก็ใช้ 1 (สร้างตรงนี้เพื่อจะไปเลือกอาร์เรย์ของ splitedNote)
-//     if (splitedNote.length === 1) {
-//       indexOfNote = 0
-//     } else {
-//       indexOfNote = 1
-//     }
-//     let noteForPlay = splitedNote[indexOfNote] // เอาเฉพาะ 1
-//     noteForPlay = noteForPlay.split("") // นำมาทำให้โน้ตแต่ละตัวเป็นอาร์เรย์ทุกตัว
-//     // console.log('NOTEFORPLAY', noteForPlay)
-//     //สัญญลักษณ์ที่ต้องการค้นหา
-//     let slash = "/"
-//     //หาเฉพาะข้อมูลอาร์เรย์ของสัญลักษณ์
-//     let filterSigns = noteForPlay.filter(sign => sign == slash)
-//     // console.log('FILTERSIGNS', filterSigns)
-//     //หา index ของ filterSigns
-//     let indexsOfSign = [];
-//     noteForPlay.filter(function(elem, index, array) {
-//       if(elem === slash) {
-//         //นำ index ของสัญลักษณ์นำมาร่วมกันหมดเป็นอาร์เรย์
-//         indexsOfSign.push(index);
-//         // console.log('INDEXSOFSIGN.PUSH(INDEX)', indexsOfSign)
-//         }
-//       })
-//       return indexsOfSign;
-//   }
-// positionOnNote()
 }
-//ฟังก์ชันสลับการแสดงผลตัวหนังสือของฟังก์ชันแปลงตัวเลขเป็นตัวโน้ตไทยและกลับกัน
-function changeText() {
-  console.log(document.getElementById("btn1").innerText);
-  if (document.getElementById("btn1").innerText === "1234") {
-    document.getElementById("btn1").innerText = "ดรมฟ";
-    alphabet();
-  } else {
-    document.getElementById("btn1").innerText = "1234";
-    numberal();
-  }
-}
-
-//ฟังก์ชันแปลงตัวเลขเป็นตัวโน้ตไทย
-function alphabet() {
-  var thmtext = document.getElementById('thm').value;
-  i = thmtext.split(':')
-  note = i[1]
-
-  note = note.replace(/1/g, 'ด');
-  note = note.replace(/2/g, 'ร');
-  note = note.replace(/3/g, 'ม');
-  note = note.replace(/4/g, 'ฟ');
-  note = note.replace(/5/g, 'ซ');
-  note = note.replace(/6/g, 'ล');
-  note = note.replace(/7/g, 'ท');
-  note = note.replace(/8/g, 'ดํ');
-  note = note.replace(/9/g, 'รํ');
-  note = note.replace(/\*/g, 'ํ');
-  note = note.replace(/\+/g, 'ํ');
-  note = note.replace(/\./g, 'ฺ');
-
-  document.getElementById('thm').value = i[0] + ":" + note;
-}
-
-
-//ฟังก์ชันแปลงตัวโน้ตไทยเป็นตัวเลข
-function numberal() {
-  var thmtext = document.getElementById('thm').value;
-  i = thmtext.split(':')
-  note = i[1]
-  //regex ไม่แปลงสตริงใด ๆ ในเครื่องหมาย ()
-  // note = note.replace(/ *\([^)]*\) */g, /(\w*)/);
-
-  note = note.replace(/ด/g, '1');
-  note = note.replace(/ร/g, '2');
-  note = note.replace(/ม/g, '3');
-  note = note.replace(/ฟ/g, '4');
-  note = note.replace(/ซ/g, '5');
-  note = note.replace(/ล/g, '6');
-  note = note.replace(/ท/g, '7');
-  note = note.replace(/ํ/g, '*');
-  note = note.replace(/ฺ/g, '.');
-
-  document.getElementById('thm').value = i[0] + ":" + note;
-}
-
-function changeMelody() {
-  var x = document.getElementById("melody").value;
-  document.getElementById("thm").value = x;
-}
-
-//ฟังก์ชันอ่านไฟล์โน้ต
-//Read file https://www.w3docs.com/learn-javascript/file-and-filereader.html
-function readFile(input) {
-  let file = input.files[0];
-  let fileReader = new FileReader();
-  fileReader.readAsText(file);
-  fileReader.onload = function() {
-    document.getElementById("thm").value = fileReader.result;
-  };
-  fileReader.onerror = function() {
-    alert(fileReader.error);
-  };
-}
-//Save file https://stackoverflow.com/a/30740104
-function saveTextAsFile() {
-  var textToWrite = document.getElementById("thm").value;
-  var textFileAsBlob = new Blob([textToWrite], {
-    type: "text/plain"
-  });
-  var splitedText = textToWrite.split(":");
-  nameAndBPM = splitedText[0];
-  onlyName = nameAndBPM.split("(")
-  var fileNameToSaveAs = onlyName[0] + ".txt";
-
-  var downloadLink = document.createElement("a");
-  downloadLink.download = fileNameToSaveAs;
-  downloadLink.innerHTML = "Download File";
-  if (window.webkitURL != null) {
-    // Chrome allows the link to be clicked
-    // without actually adding it to the DOM.
-    downloadLink.href = window.webkitURL.createObjectURL(textFileAsBlob);
-  } else {
-    // Firefox requires the link to be added to the DOM
-    // before it can be clicked.
-    downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
-    downloadLink.onclick = destroyClickedElement;
-    downloadLink.style.display = "none";
-    document.body.appendChild(downloadLink);
-  }
-  downloadLink.click();
-}
-// var button = document.getElementById("save");
-// button.addEventListener("onclick", saveTextAsFile);
