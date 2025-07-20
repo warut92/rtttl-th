@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
   
     // Update button label
     function updateButton() {
-      toggleBtn.textContent = isEnabled ? "ปิดการแปลง Auto" : "แปลงโน้ต Auto";
+      toggleBtn.textContent = isEnabled ? "✅แปลงโน้ต Auto" : "❌ปิดการแปลง Auto";
     }
   
     // Toggle function
