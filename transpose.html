@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <textarea id="thm" name="name" rows="8" cols="80">---7 ---6 -5-6 -5-6 -5-7</textarea>
+    <button type="button" name="button" onclick="transpose(-1)">-</button>
+    <button type="button" name="button" onclick="transpose(1)">+</button>
+    <script type="text/javascript">
+
+    let shift = 0
+      //ฟังก์ชันหลัก
+      function transpose(n) {
+        //shift คือตัวที่จะไปบวกหรือลบกับตัวโน้ตปัจจุบัน
+        if (n === 1) {
+          shift = 1
+        } else {
+          shift = -1
+        }
+        //ดึงโน้ตจาก textarea
+        thm = document.getElementById('thm').value;
+        //แยกตัวโน้ตทุกด้วยเป็นอาร์เรย์
+        let parts = thm.split("")
+        //ลูปแต่ละ index ของ array parts
+        for (let i = 0; i < parts.length; i++) {
+          //ซึ่งในแต่ละ index ถ้าเป็นตัวเลข !NaN จะให้เพิ่มจำนวน
+          if (!isNaN(parts[i])) {
+            parts[i] = parseInt(parts[i]) + shift
+            if (parts[i] > 7) {
+              parts[i] = 1
+            } else if (parts[i] < 1) {
+              parts[i] = 7
+            }
+          }
+        }
+        let transposedNote = parts.join("");
+        //ไม่รู้เพราะอะไร จากการลูปของ ค่าที่เป็นช่องว่าง จะได้ค่ามาเป็น NaN
+        //จึงทำการ replace ด้วยช่องว่างให้กลับมาเหมือนเดิม
+        transposedNote = transposedNote.replace(/NaN/g, " ")
+        document.getElementById('thm').value = transposedNote
+      }
+    </script>
+  </body>
+</html>
